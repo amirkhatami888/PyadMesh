@@ -45,7 +45,7 @@ def plotPureMESH(Mesh,path,name_plot):
     ax.axis('off')
 
     #plot the contour
-    pc = quatplot(verts_li, ax=ax,edgecolors='k',linewidths=0.1,facecolors='none')
+    pc = quatplot(verts_li, ax=ax,edgecolors='k',linewidths=0.3,facecolors='none')
     # ax.plot(x,y, marker='o', linestyle='', markersize=0.5, color='k')
     ax.set_title(str(name_plot))
     print(f"info: saving {name_plot}")\
