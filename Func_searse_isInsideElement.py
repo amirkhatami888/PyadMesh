@@ -8,6 +8,21 @@ import math
 
 
 def checker(x_a,y_a,x_b,y_b,x_c,y_c,O_x,O_y):
+    """this function check one point is inside of triangle or not?
+    
+    Args:
+        x_a (np.float64 ): x of Vertex a
+        y_a (np.float64):  y of Vertex a
+        x_b (np.float64):  x of Vertex b
+        y_b (np.float64):  y of Vertex b
+        x_c (np.float64):  x of Vertex c
+        y_c (np.float64):  y of Vertex c
+        O_x (np.float64):  x of point
+        O_y (np.float64):  y of point
+    
+    returns:
+        int: if inside element 1 otherwise -1
+    """
     telerance=1e-10
     if ((x_b-x_a)*(O_y-y_a)-(y_b-y_a)*(O_x-x_a) <= telerance and
         (x_c-x_b)*(O_y-y_b)-(y_c-y_b)*(O_x-x_b) <= telerance and
@@ -24,6 +39,18 @@ def checker(x_a,y_a,x_b,y_b,x_c,y_c,O_x,O_y):
 
 
 def kernel_check_PointIsInsideElements(point,ElementsMatrixWithCoordinates):
+    """
+    this function by using checker ,check elements points inside them or not
+
+    Args:
+        point (list): list of coordinate of point
+        ElementsMatrixWithCoordinates (2d numpy array float64):numpy array of coordinate of vertexs
+    
+    Returns:
+        numpy array : numpy array of answer of result
+    """
+    
+    
     ans           = np.array  (np.empty(len(ElementsMatrixWithCoordinates)), dtype=np.int32 )
     element_n1_xs = np.array  (ElementsMatrixWithCoordinates[:,1].flatten(), dtype=np.float64)
     element_n1_ys = np.array  (ElementsMatrixWithCoordinates[:,2].flatten(), dtype=np.float64)

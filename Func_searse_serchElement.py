@@ -29,6 +29,13 @@ def checker(id_n1,id_n2,id_n3,id_tri_n1,id_tri_n2,id_tri_n3):
 
 
 def search_element(mesh,Element):
+    """this function search element that have sharing vertex with a triangle
+        args:
+            mesh (Mesh): mesh of problem
+            Element (Triangle_order1): triangle that we want to find element that have sharing vertex with it
+        return:
+            numpy array : numpy array of answer of result
+    """
     ElementsNumpyArray=mesh.GiveJarOfElement().ToNumPyArrayWithIDs()
     id_elements=ElementsNumpyArray[:,0]
     id_n1s=ElementsNumpyArray[:,1]

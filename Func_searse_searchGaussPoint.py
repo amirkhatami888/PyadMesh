@@ -36,6 +36,15 @@ def checker(x_a, y_a, x_b, y_b, x_c, y_c, O_x, O_y):
 
 
 def search_GaussPoint(Element,Gpoints):
+    """this function using checker and check_PointIsInsideTriangles is
+    
+    Args:
+        Element (Triangle_order1): element of triangle
+        Gpoints (2d numpy array ): numpy array of coordinate of point checking
+    
+    Returns:
+        numpy array : numpy array of answer of result
+    """
 
     ans           = np.empty(len(Gpoints), dtype=np.int32)
     element_n1_x = np.float64(Element.Give_n1().Give_x())

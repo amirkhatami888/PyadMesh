@@ -34,6 +34,13 @@ def nearest_point(point, points):
         return distances
 
     def find_nearest_point(distances):
+        """ this function find the nearest point to the given point
+        Args:
+            distances (list): The list of distances.
+        
+        Returns:
+            float: The x-coordinate of the nearest point.
+        """
         np_distances = np.array(distances, dtype=np.float64)
         return points[np.argmin(np_distances)]
 

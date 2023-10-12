@@ -9,6 +9,8 @@ from GUI_Tab_plotError_fineMesh import Tab_plotError_fineMesh
 
 
 class mainFrameGUI(QWidget):
+    """this class
+    """
     def __init__(self):
         super().__init__()
         self.setGeometry(15, 30, 700, 500)
