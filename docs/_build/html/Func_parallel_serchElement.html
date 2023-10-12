@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Func_parallel_serchElement module &mdash; PyAdaptiMesh 2 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PyAdaptiMesh
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Func_parallel_serchElement module</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyAdaptiMesh</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Func_parallel_serchElement module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Func_parallel_serchElement.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-Func_parallel_serchElement">
+<span id="func-parallel-serchelement-module"></span><h1>Func_parallel_serchElement module<a class="headerlink" href="#module-Func_parallel_serchElement" title="Permalink to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="Func_parallel_serchElement.checker">
+<span class="sig-prename descclassname"><span class="pre">Func_parallel_serchElement.</span></span><span class="sig-name descname"><span class="pre">checker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_n1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_n2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_n3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_tri_n1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_tri_n2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_tri_n3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Func_parallel_serchElement.checker" title="Permalink to this definition"></a></dt>
+<dd><p>this function check if   a element have sharing vertex with a triangle</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>id_n1 (np.int32): id of vertex 1 of element
+id_n2 (np.int32): id of vertex 2 of element
+id_n3 (np.int32): id of vertex 3 of element
+id_tri_n1 (np.int32): id of vertex 1 of triangle
+id_tri_n2 (np.int32): id of vertex 2 of triangle
+id_tri_n3 (np.int32): id of vertex 3 of triangle</p>
+</dd>
+<dt>Returns:</dt><dd><p>int : 1 if element have sharing vertex with triangle else -1</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Func_parallel_serchElement.mul_check_PointIsInsideTriangles">
+<span class="sig-prename descclassname"><span class="pre">Func_parallel_serchElement.</span></span><span class="sig-name descname"><span class="pre">mul_check_PointIsInsideTriangles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_n1s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_n2s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_n3s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_tri_n1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_tri_n2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_tri_n3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ans</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Func_parallel_serchElement.mul_check_PointIsInsideTriangles" title="Permalink to this definition"></a></dt>
+<dd><p>this function check if   a element have sharing vertex with a triangle</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>id_n1s (numpy array int32): id of vertex 1 of element
+id_n2s (numpy array int32): id of vertex 2 of element
+id_n3s (numpy array int32): id of vertex 3 of element
+id_tri_n1 (numpy array int32): id of vertex 1 of triangle
+id_tri_n2 (numpy array int32): id of vertex 2 of triangle
+id_tri_n3 (numpy array int32): id of vertex 3 of triangle
+ans (numpy array int32): array of result</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Func_parallel_serchElement.mul_kernel_check_PointIsInsideElementssearch_element">
+<span class="sig-prename descclassname"><span class="pre">Func_parallel_serchElement.</span></span><span class="sig-name descname"><span class="pre">mul_kernel_check_PointIsInsideElementssearch_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MeshElementsNumpyArray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Elements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thread_x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thread_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Func_parallel_serchElement.mul_kernel_check_PointIsInsideElementssearch_element" title="Permalink to this definition"></a></dt>
+<dd><p>this function check if   a element have sharing vertex with a triangle</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>MeshElementsNumpyArray (numpy array int32): array of elements
+Elements (numpy array int32): array of triangles</p>
+</dd>
+<dt>Returns:</dt><dd><p>list of list of int : list of id of elements that have sharing vertex with a triangle</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Func_parallel_serchElement.one_check_PointIsInsideTriangles">
+<span class="sig-prename descclassname"><span class="pre">Func_parallel_serchElement.</span></span><span class="sig-name descname"><span class="pre">one_check_PointIsInsideTriangles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_n1s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_n2s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_n3s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_tri_n1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_tri_n2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_tri_n3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ans</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Func_parallel_serchElement.one_check_PointIsInsideTriangles" title="Permalink to this definition"></a></dt>
+<dd><p>this function check if   a element have sharing vertex with a triangle</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>id_n1s (numpy array int32): id of vertex 1 of element
+id_n2s (numpy array int32): id of vertex 2 of element
+id_n3s (numpy array int32): id of vertex 3 of element
+id_tri_n1 (int32): id of vertex 1 of triangle
+id_tri_n2 (int32): id of vertex 2 of triangle
+id_tri_n3 (int32): id of vertex 3 of triangle
+ans (numpy array int32): array of result</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Func_parallel_serchElement.one_search_element">
+<span class="sig-prename descclassname"><span class="pre">Func_parallel_serchElement.</span></span><span class="sig-name descname"><span class="pre">one_search_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mesh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Element</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thread_x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thread_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Func_parallel_serchElement.one_search_element" title="Permalink to this definition"></a></dt>
+<dd><p>this function check if   a element have sharing vertex with a triangle</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>mesh (Mesh): mesh
+Element (Triangle): triangle</p>
+</dd>
+<dt>Returns:</dt><dd><p>list of int : list of id of elements that have sharing vertex with a triangle</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, amirkhatami.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
