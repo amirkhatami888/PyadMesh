@@ -37,6 +37,16 @@ import re_iding
 
 
 def auto_generateMesh(csvFile,inpFile,igsFile,savePath,max_iteration,scalefactor,ratio_selection):
+    """this function generate mesh automatically
+    Args:
+        csvFile (str): csv file path
+        inpFile (str): inp file path
+        igsFile (str): igs file path
+        savePath (str): save path
+        max_iteration (int): maximum iteration
+        scalefactor (float): scale factor
+        ratio_selection (float): ratio selection
+    """
     warnings.simplefilter('ignore', category=NumbaPerformanceWarning)
     step=1
     #read step mesh 

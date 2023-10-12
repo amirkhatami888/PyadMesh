@@ -1,5 +1,6 @@
 
 def rename(mesh):
+    """this function rename id of nodes and elements"""
     couter=1
     for element in mesh.GiveJarOfElement().GiveElements():
         element.id=couter

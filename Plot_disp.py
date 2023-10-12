@@ -11,6 +11,13 @@ import os
 
         
 def save_countourDisplacement(Mesh,path,name,name_plot):
+    """this function plot the displacement of mesh
+    Args:
+        Mesh (class): mesh class
+        path (str): save path
+        name (str): file name
+        name_plot (str): plot name
+    """
     U1_lis=[]
     U2_lis=[]
     X_lis=[]

@@ -35,7 +35,15 @@ import time
 
 
 def tranferMesh(csvFile,inpFile,datFile,savePath,thread_x,thread_y):
-    
+    """this function tranfer information of mesh
+    Args:
+        csvFile (str): csv file path
+        inpFile (str): inp file path
+        datFile (str): dat file path
+        savePath (str): save path
+        thread_x (int): number of thread in x direction
+        thread_y (int): number of thread in y direction
+    """
     warnings.simplefilter('ignore', category=NumbaPerformanceWarning)
 
     #read first mesh 

@@ -3,6 +3,8 @@ from PySide6 import QtGui
 import os
 
 def Tab_plotError(fourth_layout):
+        """ this function create the fourth tab in the GUI
+        """
         global CSV_FIILE, INP_FILE, SAVE_FILE, PROCOCESS
         CSV_FIILE = ""
         INP_FILE = ""

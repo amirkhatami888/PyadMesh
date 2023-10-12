@@ -4,6 +4,8 @@ from PySide6 import QtGui
 
 import os
 def Tab_autoRegen(third_layout):
+    """this function create the third tab of GUI
+    """
     global CSV_FIILE, INP_FILE, IGS_FILE,SAVE_FILE, PROCOCESS, MAX_ERROR, scalefactor, ratio_selection,MAX_ITER
     CSV_FIILE = ""
     INP_FILE = ""

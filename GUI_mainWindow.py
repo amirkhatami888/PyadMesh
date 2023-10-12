@@ -9,7 +9,7 @@ from GUI_Tab_plotError_fineMesh import Tab_plotError_fineMesh
 
 
 class mainFrameGUI(QWidget):
-    """this class
+    """this class is the main frame of the GUI
     """
     def __init__(self):
         super().__init__()
@@ -78,6 +78,7 @@ class mainFrameGUI(QWidget):
         self.setLayout(layout)
     
     def close_main_frame(self):
+        
         self.close()
 
 

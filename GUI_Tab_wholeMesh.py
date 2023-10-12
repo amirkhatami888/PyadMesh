@@ -3,6 +3,8 @@ from PySide6 import QtGui
 import os
 
 def Tab_wholeMesh(second_layout):
+    """ this function create the second tab in the GUI
+    """
     global CSV_FIILE, INP_FILE, DAT_FILE, SAVE_FILE, PROCOCESS, THREAD_X, THREAD_Y, CORE
     CSV_FIILE = ""
     INP_FILE = ""

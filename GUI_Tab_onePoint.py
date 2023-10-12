@@ -4,6 +4,8 @@ import os
 
 
 def Tab_onePoint(first_layout):
+    """ this function create the first tab in the GUI
+    """
     global CSV_FIILE,INP_FILE,PROCOCESS,POINT_X,POINT_Y
     CSV_FIILE = ""
     INP_FILE = ""

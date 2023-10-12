@@ -35,7 +35,13 @@ import time
 
 def tranferPoint(csvFile,inpFile,X,Y):
     
-
+    """this function tranfer information of mesh for one point
+    Args:
+        csvFile (str): csv file path
+        inpFile (str): inp file path
+        X (float): x coordinate
+        Y (float): y coordinate
+    """
 
     #read first mesh 
     print(f"info    : reading first mesh")

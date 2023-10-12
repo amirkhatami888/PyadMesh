@@ -10,6 +10,15 @@ from math import sqrt
 
         
 def write_pos(Mesh,scalefactor,ratio_selection,step ):
+    """this function write pos file
+    Args:
+        Mesh (class): mesh class
+        scalefactor (float): scale factor
+        ratio_selection (float): ratio selection
+        step (int): step
+    Returns:
+        str: pos file path
+    """
     li_value=[]
     for element in Mesh.JarOfElement.elements:
         temp=element.srp_value

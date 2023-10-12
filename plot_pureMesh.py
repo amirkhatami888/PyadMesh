@@ -16,6 +16,7 @@ import numpy as np
 import os
 
 def quatplot(verts, ax=None, **kwargs):
+    """Plot a 2D triangulation."""
     pc = matplotlib.collections.PolyCollection(verts, **kwargs)
 
     ax.add_collection(pc)
@@ -23,6 +24,15 @@ def quatplot(verts, ax=None, **kwargs):
     return pc
 
 def plotPureMESH(Mesh,path,name_plot):
+    """this function plot the error of mesh
+    Args:
+        Mesh (class): mesh class
+        path (str): save path
+        name (str): file name
+        name_plot (str): plot name
+        min_colorbar (float): minimum value of colorbar
+        max_colorbar (float): maximum value of colorbar
+    """
     verts_li = []
 
     for element in Mesh.GiveJarOfElement().GiveElements():

@@ -22,7 +22,12 @@ import time
 
 
 def Plot_Error(csvFile,inpFile,savePath):
-
+    """ this function plot error of mesh
+    Args:
+        csvFile (str): csv file path
+        inpFile (str): inp file path
+        savePath (str): save path
+    """
     print(f"info    : reading  mesh")
 
     first_Nodes = JarOfNodes()

@@ -21,6 +21,14 @@ import re_iding
 import time
 
 def Plot_Error(csvFile,inpFile,savePath,inpFile_fineMesh,csvFile_fineMesh):
+    """ this function plot error of mesh
+    Args:
+        csvFile (str): csv file path
+        inpFile (str): inp file path
+        savePath (str): save path
+        inpFile_fineMesh (str): inp file path
+        csvFile_fineMesh (str): csv file path
+    """
     #read fine mesh 
     print(f"info    : reading  mesh")
 

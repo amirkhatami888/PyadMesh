@@ -7,6 +7,8 @@ from gui.GUI_Tab_autoRegen import Tab_autoRegen
 from gui.GUI_Tab_plotError import Tab_plotError
 
 class mainFrameGUI(QWidget):
+    """this class is the main frame of the GUI
+    """
     def __init__(self):
         super().__init__()
         self.setGeometry(15, 30, 700, 500)
