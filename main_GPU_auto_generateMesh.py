@@ -37,6 +37,19 @@ import time
 
 
 def auto_generateMesh(csvFile,inpFile,igsFile,savePath,max_iteration,scalefactor,ratio_selection):
+    """this function generate the mesh and calculate the srp value for each mesh and save it in csv file
+    Args:
+        csvFile (str): the csv file that contain the gradient value
+        inpFile (str): the inp file that contain the mesh information
+        igsFile (str): the igs file that contain the mesh information
+        savePath (str): the path that the result will be saved
+        max_iteration (int): the maximum iteration that the program will run
+        scalefactor (float): the scale factor that the mesh will be scaled
+        ratio_selection (float): the ratio of the mesh that will be selected
+    
+    Returns:
+        None
+    """
     warnings.simplefilter('ignore', category=NumbaPerformanceWarning)
     step=1
     #read step mesh 
