@@ -51,7 +51,7 @@ def kernel_check_PointIsInsideElements(point,ElementsMatrixWithCoordinates):
     """
     
     
-    ans           = np.array  (np.empty(len(ElementsMatrixWithCoordinates)), dtype=np.int32 )
+    ans           = np.array  (np.zeros(len(ElementsMatrixWithCoordinates)), dtype=np.int32 )
     element_n1_xs = np.array  (ElementsMatrixWithCoordinates[:,1].flatten(), dtype=np.float64)
     element_n1_ys = np.array  (ElementsMatrixWithCoordinates[:,2].flatten(), dtype=np.float64)
     element_n2_xs = np.array  (ElementsMatrixWithCoordinates[:,3].flatten(), dtype=np.float64)

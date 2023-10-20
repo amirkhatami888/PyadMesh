@@ -51,15 +51,14 @@ class Triangle_order1:
         Returns:
             float: the error of the element
         """
-        
-        
-            e=abs(self.srp_value-self.fem_value)/abs(self.fem_value)
-            if abs(self.srp_value-self.fem_value)<1e-5:
-                e=1e-5
-            elif abs(self.fem_value)<1e-10:
-                e=abs(self.srp_value-self.fem_value)
-            return e
-        
+
+        e=abs(self.srp_value-self.fem_value)/abs(self.fem_value)
+        if abs(self.srp_value-self.fem_value)<1e-5:
+            e=1e-5
+        elif abs(self.fem_value)<1e-10:
+            e=abs(self.srp_value-self.fem_value)
+        return e
+    
     def Give_GaussianPoint(self):
         """this function is used to return the Gaussian point of the element
         

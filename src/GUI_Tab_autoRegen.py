@@ -112,13 +112,16 @@ def Tab_autoRegen(third_layout):
     ### Create radio button
     radio_button1 = QRadioButton("CPU") 
     radio_button2 = QRadioButton("GPU")
+    radio_button3 = QRadioButton("parallelCPU")
     radio_button1.toggled.connect(lambda: write_text("CPU","PROCOCESS"))
     radio_button2.toggled.connect(lambda: write_text("GPU","PROCOCESS"))
+    radio_button3.toggled.connect(lambda: write_text("parallelCPU","PROCOCESS"))
 
     ### Add widget to layout
     input_layout4.addWidget(label_type_processor)
     input_layout4.addWidget(radio_button1)
     input_layout4.addWidget(radio_button2)
+    input_layout4.addWidget(radio_button3)
     
     ### maximun ERROR and maximun iteration
     input_layout5 = QHBoxLayout()
@@ -223,6 +226,9 @@ def Tab_autoRegen(third_layout):
                     write_text(text,"PROCOCESS")
             elif text == "GPU":
                     write_text(text,"PROCOCESS")
+            elif text == "parallel":
+                    write_text(text,"PROCOCESS")
+                
                     
     def isfloat(value):
         try:
@@ -252,6 +258,8 @@ def Tab_autoRegen(third_layout):
                 os.system(f"python main_CPU_auto_generateMesh.py {CSV_FIILE} {INP_FILE} {IGS_FILE} {SAVE_FILE} {MAX_ITER} {scalefactor} {ratio_selection} ")
             if PROCOCESS == "GPU":
                 os.system(f"python main_GPU_auto_generateMesh.py {CSV_FIILE} {INP_FILE} {IGS_FILE} {SAVE_FILE} {MAX_ITER} {scalefactor} {ratio_selection} ")
+            if PROCOCESS == "parallelCPU":
+                os.system(f"python main_CPU_parallel_auto_generateMesh.py {CSV_FIILE} {INP_FILE} {IGS_FILE} {SAVE_FILE} {MAX_ITER} {scalefactor} {ratio_selection} 11")
 
 
 
