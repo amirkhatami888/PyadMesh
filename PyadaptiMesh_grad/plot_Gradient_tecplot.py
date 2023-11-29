@@ -8,6 +8,12 @@ import numpy as np
 import os
 
 def plotMESH(Mesh,path,name_plot):
+    """this function is used to plot the mesh
+    Args:
+        Mesh (Mesh): the mesh
+        path (str): the path
+        name_plot (str): the name of the plot
+    """
     index_li=[]
     x=[]
     y=[]

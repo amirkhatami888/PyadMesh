@@ -7,10 +7,11 @@ def meshGeneration(igsFile,posfile,savePath,step,meshAlgorithm=5):
     """this function generate mesh for igs file and pos file
 
     Args:
-        igsFile (str): path to igs file
-        posfile (str): path to pos file
-        MIN (float ):minimum mesh size
-
+        igsFile (str): name of igs file
+        posfile (str): name of pos file
+        savePath (str): path to save mesh file
+        step (int): step of mesh generation
+        meshAlgorithm (int, optional): mesh algorithm. Defaults to 5.
     Returns:
         str : name of mesh file
     """
@@ -25,17 +26,8 @@ def meshGeneration(igsFile,posfile,savePath,step,meshAlgorithm=5):
     gmsh.option.setNumber("Mesh.MeshSizeFromPoints",        60)
     gmsh.option.setNumber("Mesh.MeshSizeFromCurvature",     0)
 
-
-
-
-    print()
     gmsh.option.setNumber("Mesh.Algorithm",meshAlgorithm)
  
-
-
-
-    # gmsh.model.mesh.optimize("Relocate2D")
-    # gmsh.model.mesh.optimize("Netgen")
     gmsh.model.mesh.generate(2)
     name=f"refinement_{step}.dat"
     name2=f"refinement_{step}.inp"

@@ -4,6 +4,13 @@ import cupy as cp
 
 
 def transfering(element, node):
+    """this function is used to transfer displacement from element to node
+    Args:
+        element (element): element
+        node (node): node
+    Returns:
+        float: the displacement of the node
+    """
     x = cp.float64(node[0])
     y = cp.float64(node[1])
     x1 = cp.float64(element.n1.x)

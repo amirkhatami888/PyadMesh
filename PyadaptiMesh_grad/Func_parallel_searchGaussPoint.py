@@ -92,6 +92,19 @@ def mul_search_GaussPoint(Elements, Gpoints,thread_x=32,thread_y=32):
 
 @cuda.jit('void(float64[:],float64[:],float64,float64,float64,float64,float64,float64,int32[:])')
 def one_check_PointIsInsideTriangles(point_xs,point_ys,x_a,y_a,x_b,y_b,x_c,y_c,ans):
+    """this function by using checker ,check elements points inside them or not
+    
+    Args:
+        point_xs (numpy array float64): x of points
+        point_ys (numpy array float64): y of points
+        x_a (float64): xs of a vertex a's
+        y_a (float64): ys of a vertex a's
+        x_b (float64): xs of a vertex b's
+        y_b (float64): ys of a vertex b's
+        x_c (float64): xs of a vertex c's
+        y_c (float64): ys of a vertex c's
+        ans (numpy array float64): array of answer of result
+    """
     i = cuda.grid(1)
     if i < len(point_xs):
         ans[i]=checker(x_a,y_a,x_b,y_b,x_c,y_c,point_xs[i],point_ys[i])

@@ -26,11 +26,13 @@ class Triangle_order1:
             A(float): area of the triangle
             GaussianPoint_coordinate(list): coordinate of the Gaussian point
             GaussianPoints(list): list of Gaussian points
+            elementSize(float): size of the element
+            srp_value(float): value of the srp
+            fem_value(float): value of the fem 
         """
-        
-        
-        self.id=id
 
+        self.id=id
+        
         self.n1 = n1
         self.n2 = n2
         self.n3 = n3
@@ -57,6 +59,8 @@ class Triangle_order1:
         
     @property
     def Error_pure(self):
+        """this property is used to return the absoulote error of the element
+        """
         return abs(self.srp_value-self.fem_value)
     
     

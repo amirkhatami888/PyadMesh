@@ -3,6 +3,13 @@ import numpy as np
 
 
 def transfering(element,node):
+    """this function is used to transfer displacement from element to node
+    Args:
+        element (element): element
+        node (node): node
+    Returns:
+        float: the displacement of the node
+    """
     x=np.float64(node[0])
     y=np.float64(node[1])
     x1=np.float64(element.n1.x)

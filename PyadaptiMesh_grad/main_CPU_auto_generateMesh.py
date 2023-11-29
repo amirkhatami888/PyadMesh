@@ -35,6 +35,18 @@ from plot_pureMesh import plotPureMESH
 
 
 def auto_generateMesh(csvFile,inpFile,igsFile,savePath,max_iteration,scalefactor,dispFile,plotType,meshAlgorithm):
+    """this function is used to generate the mesh and transfer gradiant from the first mesh to the last mesh
+    Args:
+        csvFile (string): the path of the csv file
+        inpFile (string): the path of the inp file
+        igsFile (string): the path of the igs file
+        savePath (string): the path of the save file
+        max_iteration (int): the maximum iteration
+        scalefactor (float): the scale factor
+        dispFile (string): the path of the disp file
+        plotType (string): the plot type
+        meshAlgorithm (int): the mesh algorithm
+    """
     warnings.simplefilter('ignore', category=NumbaPerformanceWarning)
     step=1
     #read step mesh 

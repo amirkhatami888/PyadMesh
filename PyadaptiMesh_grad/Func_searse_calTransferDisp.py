@@ -3,6 +3,13 @@ import Func_searse_transferingdisp as transfering
 import func_nearestPoint as func_nearestPoint
 
 def calTransferDisplacement(firstMesh,secondMesh):
+    """this function is used to transfer displacement from first mesh to second mesh
+    Args:
+        firstMesh (mesh): first mesh
+        secondMesh (mesh): second mesh
+    Returns:
+        mesh: second mesh with displacement
+    """
     for node in secondMesh.GiveJarOfNodes().nodes:
         point=[node.x,node.y]
         node_id=node.id

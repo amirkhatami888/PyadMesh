@@ -19,6 +19,15 @@ import os
 from Func_parallel_calPointSRP import one_point
 
 def quatplot(verts, values, ax=None, **kwargs):
+    """Plot a 2D triangulation as a color-coded quadrilateral mesh.
+    Arguments:
+        verts: a list of the vertices of each quadrilateral
+        values: the value of each quadrilateral
+        ax: the matplotlib axes to plot on
+        kwargs: keyword arguments passed on to matplotlib.collections.PolyCollection
+    Returns:
+        pc: the matplotlib PolyCollection instance plotted on ax
+    """
     pc = matplotlib.collections.PolyCollection(verts, **kwargs)
     pc.set_array(values)
     ax.add_collection(pc)
@@ -26,6 +35,12 @@ def quatplot(verts, values, ax=None, **kwargs):
     return pc
 
 def plotMESH(Mesh,li_value,path,name_plot):
+    """this function is used to plot the mesh
+    Args:
+        Mesh (Mesh): the mesh
+        path (str): the path
+        name_plot (str): the name of the plot
+    """
     verts_li = []
     index_li=[]
     for element in Mesh.GiveJarOfElement().GiveElements():

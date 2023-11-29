@@ -5,7 +5,14 @@ import numpy as np
 
 
 def write_pos(Mesh,scalefactor,step ):
-
+    """this function is used to write the pos file
+    Args:
+        Mesh (Mesh): the mesh
+        scalefactor (float): the scale factor
+        step (int): the step
+    Returns:
+        str: the name of the pos file
+    """
     for node in Mesh.JarOfNodes.nodes:
         for element in Mesh.JarOfElement.elements:
             if node.id==element.n1.id or node.id==element.n2.id or node.id==element.n3.id:

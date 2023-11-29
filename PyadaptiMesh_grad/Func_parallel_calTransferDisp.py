@@ -3,7 +3,13 @@ import Func_Parallel_N as N_cal
 import Func_parallel_U_cal as U_cal
 import numpy as np
 def calTransferDisplacement(firstMesh,secondMesh):
-    
+    """this function is used to transfer displacement from first mesh to second mesh
+    Args:
+        firstMesh (mesh): first mesh
+        secondMesh (mesh): second mesh
+    Returns:
+        mesh: second mesh with displacement
+    """
     points=np.array(secondMesh.JarOfNodes.ToMatrix())
     Elements=firstMesh.JarOfElement.ToNumPyArrayWithCoordinates()
     Elements_sorted_base_newMesh=np.array(isInsideElement.mul_kernel_check_PointIsInsideElements(points,Elements),dtype=np.float64)

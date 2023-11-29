@@ -8,6 +8,9 @@ from DataStructure_Point_Gaussian import GaussianPoint as GaussianPoint
 
 
 class GmeshDAT:
+    """this class is used to read the dat file from gmesh
+    """
+    
     def __init__(self,mesh,path):
         self.path     = path
         self.mesh     = mesh

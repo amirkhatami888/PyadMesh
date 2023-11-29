@@ -11,6 +11,15 @@ import pandas as pd
 
 
 def quatplot(verts, values, ax=None, **kwargs):
+    """Plot a 2D triangulation as a color-coded quadrilateral mesh.
+    Arguments:  
+        verts: a list of the vertices of each quadrilateral
+        values: the value of each quadrilateral
+        ax: the matplotlib axes to plot on
+        kwargs: keyword arguments passed on to matplotlib.collections.PolyCollection
+    Returns:
+        pc: the matplotlib PolyCollection instance plotted on ax
+    """
     pc = matplotlib.collections.PolyCollection(verts, **kwargs)
     pc.set_array(values)
     ax.add_collection(pc)
@@ -20,6 +29,13 @@ def quatplot(verts, values, ax=None, **kwargs):
 
         
 def show_countourError(Mesh,path,name,min_colorbar,max_colorbar):
+    """this function is used to save the contour of the displacement
+    Args:
+        Mesh (Mesh): the mesh
+        path (str): the path
+        name (str): the name
+        name_plot (str): the name of the plot
+    """
     verts_li = []
     li_node=[]
     li_srp=[]

@@ -1,6 +1,15 @@
 import numpy as np 
 
 def write_plt_tecplot(path,fileName,X_li,Y_li,Value_li,index_li):
+    """this function is used to write plt tecplot file
+    Args:
+        path (str): the path
+        fileName (str): the name of the file
+        X_li (list): list of x
+        Y_li (list): list of y
+        Value_li (list): list of values
+        index_li (list): list of index
+    """
     ntri=len(index_li)
     npoint=len(X_li)
     li_file=[]

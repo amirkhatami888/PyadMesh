@@ -4,13 +4,8 @@
 import math
 import numpy as np
 class NodePoint:
-    """this class is used to store the data of a node
-    attributes:
-        id: the id of the node
-        x: the x coordinate of the node
-        y: the y coordinate of the node
-        displacement: the displacement of the node
-    """
+    
+
     def __init__(self,id, x, y,displacement=None,stepSize=None):
         """
         the constructor for NodePoint class

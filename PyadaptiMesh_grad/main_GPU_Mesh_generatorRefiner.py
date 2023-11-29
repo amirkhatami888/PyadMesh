@@ -35,6 +35,15 @@ from plot_pureMesh import plotPureMESH
 
 
 def auto_generateMesh(inpFile,igsFile,savePath,max_iteration,scalefactor,dispFile):    
+    """This function is used to generate the mesh automatically and save the mesh in the savePath
+    Args:
+        inpFile (str): the inp file
+        igsFile (str): the igs file
+        savePath (str): the save path
+        max_iteration (int): the maximum iteration
+        scalefactor (float): the scale factor
+        dispFile (str): the displacement file
+    """
     warnings.simplefilter('ignore', category=NumbaPerformanceWarning)
     step=1
     #read step mesh 

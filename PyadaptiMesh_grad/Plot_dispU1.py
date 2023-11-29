@@ -12,6 +12,14 @@ from plot_tecplot_pltWriter import write_plt_tecplot
 
         
 def save_countourDisplacement(Mesh,path,name,name_plot):
+    """this function is used to save the contour of the displacement
+    Args:
+        Mesh (Mesh): the mesh
+        path (str): the path
+        name (str): the name
+        name_plot (str): the name of the plot
+    """
+    
     U1_lis=[]
     U2_lis=[]
     X_lis=[]

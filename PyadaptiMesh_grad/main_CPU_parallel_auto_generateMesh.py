@@ -48,8 +48,8 @@ if __name__ == "__main__":
     dispFile=sys.argv[7]
     plotType=sys.argv[8]
     meshAlgorithm=int(sys.argv[9])
-    core=2
-    # core=os.cpu_count()
+    # core=2
+    core=os.cpu_count()
     step=1
     #read step mesh 
     print(f"info    : reading {step} mesh")

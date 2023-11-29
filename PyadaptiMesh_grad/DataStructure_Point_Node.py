@@ -9,9 +9,16 @@ class NodePoint:
         id: the id of the node
         x: the x coordinate of the node
         y: the y coordinate of the node
+        U1: the displacement of the node in x direction
+        U2: the displacement of the node in y direction
+        stepSize: the step size of the node
+        adjacentNodes: the adjacent nodes of the node
+        elementSize: the size of the element
+        dervirative_phi: the dervirative of the phi
         displacement: the displacement of the node
+        phi: the phi of the node
     """
-    def __init__(self,id, x, y,displacement=None,stepSize=None):
+    def __init__(self,id, x, y,U1=None,U2=None,stepSize=None):
         """
         the constructor for NodePoint class
         """
@@ -21,6 +28,7 @@ class NodePoint:
         self.U1=None
         self.U2=None
         self.nearestElements=set()
+        self.stepSize=stepSize
 
     @property
     def adjacentNodes(self):
@@ -35,10 +43,18 @@ class NodePoint:
         
     @property
     def elementSize(self):
+        """this function is used to return the size of the element
+        Returns:
+            float: the size of the element
+        """
         li=[element.elementSize for element in self.nearestElements]
         return np.mean(li)
     @property
     def dervirative_phi(self):
+        """this function is used to return the dervirative of the phi
+        Returns:
+            float: the dervirative of the phi
+        """
         li_phi=[]
         li_distance=[]
         li_dervirative_phi=[]
@@ -51,9 +67,17 @@ class NodePoint:
 
     @property
     def displacement(self):
+        """this function is used to return the displacement of the node
+        Returns:
+            float: the displacement of the node
+        """
         return np.array([[self.U1],[self.U2]])
     @property
     def phi(self):
+        """this function is used to return the phi of the node
+        Returns:
+            float: the phi of the node
+        """
         return math.sqrt(self.U1**2+self.U2**2)
     
 
