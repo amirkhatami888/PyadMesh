@@ -32,6 +32,10 @@ class NodePoint:
 
     @property
     def adjacentNodes(self):
+        """ this function is used to return the adjacent nodes of the node
+        Returns:
+        list: the adjacent nodes of the node
+        """
         liadjacentNodes=[]
         for element in self.nearestElements:
             for node in element.nodes:

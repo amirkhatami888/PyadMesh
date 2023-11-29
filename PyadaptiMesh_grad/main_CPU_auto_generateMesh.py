@@ -35,7 +35,7 @@ from plot_pureMesh import plotPureMESH
 
 
 def auto_generateMesh(csvFile,inpFile,igsFile,savePath,max_iteration,scalefactor,dispFile,plotType,meshAlgorithm):
-    """this function is used to generate the mesh and transfer gradiant from the first mesh to the last mesh
+    """this function is used to generate the mesh and transfer displacement from the first mesh to the last mesh
     Args:
         csvFile (string): the path of the csv file
         inpFile (string): the path of the inp file

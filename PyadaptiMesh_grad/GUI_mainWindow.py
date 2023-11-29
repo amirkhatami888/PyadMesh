@@ -85,6 +85,8 @@ class mainFrameGUI(QWidget):
         self.setLayout(layout)
     
     def close_main_frame(self):
+        """this function is used to close the main frame
+        """
         
         self.close()
 
