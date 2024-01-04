@@ -39,11 +39,13 @@ To get started with PyAdaptiMesh, follow these steps:
    ```  
 
 ### Usage
-this soft ware use two way for using :
+
+this software use two way for using :
 1. use the python code in the main.py file and run GUI.py file base on PySide6
-2. use the this in the terminal 
+2. use the this in the terminal or cmd
 for use this software for Calculating information at a point in the domain using both CPU 
 ```sh
+
 python main_CPU_transferpoint.py CSV_file_name.csv Input_file_name.inp X Y
 ```
 for use this software for Calculating information at a point in the domain using both GPU 
