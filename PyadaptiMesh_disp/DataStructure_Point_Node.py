@@ -9,6 +9,10 @@ class NodePoint:
     def __init__(self,id, x, y,displacement=None,stepSize=None):
         """
         the constructor for NodePoint class
+        Args:
+            id(int): the id of the node
+            x(float): the x coordinate of the node
+            y(float): the y coordinate of the node        
         """
         self.id = id
         self.x = x
@@ -19,6 +23,10 @@ class NodePoint:
 
     @property
     def adjacentNodes(self):
+        """this function is used to return the adjacent nodes of the node
+        Returns:
+            list: the adjacent nodes of the node
+        """
         liadjacentNodes=[]
         for element in self.nearestElements:
             for node in element.nodes:
@@ -30,10 +38,18 @@ class NodePoint:
         
     @property
     def elementSize(self):
+        """this function is used to return the element size of the node
+        Returns:
+            float: the element size of the node
+        """
         li=[element.elementSize for element in self.nearestElements]
         return np.mean(li)
     @property
     def dervirative_phi(self):
+        """this function is used to return the dervirative of phi of the node
+        Returns:
+            float: the dervirative of phi of the node
+        """
         li_phi=[]
         li_distance=[]
         li_dervirative_phi=[]
@@ -46,9 +62,17 @@ class NodePoint:
 
     @property
     def displacement(self):
+        """this function is used to return the displacement of the node
+        Returns:
+            np.array: the displacement of the node
+        """
         return np.array([[self.U1],[self.U2]])
     @property
     def phi(self):
+        """this function is used to return the phi of the node
+        Returns:
+            float: the phi of the node
+        """
         return math.sqrt(self.U1**2+self.U2**2)
     
 

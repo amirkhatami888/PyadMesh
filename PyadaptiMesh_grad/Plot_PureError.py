@@ -27,7 +27,7 @@ def quatplot(verts, values, ax=None, **kwargs):
 
 
         
-def show_countourPureError(Mesh,path,name,min_colorbar,max_colorbar):
+def show_countourPureError(Mesh,path,name,min_colorbar=0,max_colorbar=1):
     """this function is used to save the contour of the displacement
     Args:
         Mesh (Mesh): the mesh

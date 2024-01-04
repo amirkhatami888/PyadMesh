@@ -16,6 +16,14 @@ import numpy as np
 import os
 
 def quatplot(verts, ax=None, **kwargs):
+    """this function is used to plot the contour
+    Args:
+        verts(list): the list of the vertices
+        ax(matplotlib.axes): the axes
+        **kwargs: the other parameters
+    Returns:
+        pc(matplotlib.collections.PolyCollection): the PolyCollection
+    """
     pc = matplotlib.collections.PolyCollection(verts, **kwargs)
 
     ax.add_collection(pc)
@@ -23,6 +31,12 @@ def quatplot(verts, ax=None, **kwargs):
     return pc
 
 def plotPureMESH(Mesh,path,name_plot):
+    """this function is used to plot the mesh
+    Args:
+        Mesh(Mesh): the mesh
+        path(str): the path to save the displacement
+        name_plot(str): the name of the displacement
+    """
     verts_li = []
 
     for element in Mesh.GiveJarOfElement().GiveElements():

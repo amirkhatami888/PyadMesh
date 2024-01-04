@@ -11,6 +11,15 @@ import pandas as pd
 
 
 def quatplot(verts, values, ax=None, **kwargs):
+    """this function is used to plot the contour
+    Args:
+        verts(list): the list of the vertices
+        values(list): the list of the values
+        ax(matplotlib.axes): the axes
+        **kwargs: the other parameters
+    Returns:
+        pc(matplotlib.collections.PolyCollection): the PolyCollection
+    """
     pc = matplotlib.collections.PolyCollection(verts, **kwargs)
     pc.set_array(values)
     ax.add_collection(pc)
@@ -20,6 +29,12 @@ def quatplot(verts, values, ax=None, **kwargs):
 
         
 def show_countourError(Mesh,path,name,min_colorbar,max_colorbar):
+    """this function is used to save the displacement of the mesh
+    Args:
+        Mesh(Mesh): the mesh
+        path(str): the path to save the displacement
+        name(str): the name of the displacement
+    """
     verts_li = []
     li_node=[]
     li_srp=[]

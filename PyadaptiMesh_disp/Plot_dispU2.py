@@ -12,6 +12,12 @@ from plot_tecplot_pltWriter import write_plt_tecplot
 
         
 def save_countourDisplacement(Mesh,path,name,name_plot):
+    """this function is used to save the displacement of the mesh
+    Args:
+        Mesh(Mesh): the mesh
+        path(str): the path to save the displacement
+        name(str): the name of the displacement
+    """
     U1_lis=[]
     U2_lis=[]
     X_lis=[]

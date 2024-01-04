@@ -53,13 +53,14 @@ def Plot_Error(csvFile,inpFile,savePath,inpFile_fineMesh,csvFile_fineMesh):
     re_iding.rename(coarseMesh)
     
     #tranfer data from first mesh to step mesh
+    print(f"info    : calculating  mesh")
     fineMesh=calFemValue(fineMesh)
     coarseMesh=calFemValue(coarseMesh)
     coarseMesh=mul_point_ALL(fineMesh,coarseMesh)
     #calculate the step mesh error and save it
     print(f"info    : calculating  mesh error and save it")
     maximumError=[i.Error for i in coarseMesh.JarOfElement.elements]
-    show_countourError(coarseMesh,savePath,f"Error",f"Error",0,max(maximumError))
+    show_countourError(coarseMesh,savePath,f"Error",0,max(maximumError))
     Write_csvfileError(coarseMesh,savePath)
     
 

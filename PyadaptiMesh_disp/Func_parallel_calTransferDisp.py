@@ -5,7 +5,13 @@ import numpy as np
 import Func_parallel_transferingdisp as transfering
 
 def calTransferDisplacement(firstMesh,secondMesh):
-    
+    """ this function is used to calculate the transfer displacement from firstMesh to secondMesh
+    Args:
+        firstMesh(Mesh): the first mesh
+        secondMesh(Mesh): the second mesh
+    Returns:
+        Mesh: the second mesh with transfered displacement
+    """
     points=np.array(secondMesh.JarOfNodes.ToMatrix())
     Elements=firstMesh.JarOfElement.ToNumPyArrayWithCoordinates()
     Elements_sorted_base_newMesh=np.array(isInsideElement.mul_kernel_check_PointIsInsideElements(points,Elements),dtype=np.float64)
@@ -35,6 +41,13 @@ def calTransferDisplacement(firstMesh,secondMesh):
 
 
 def calTransferDisplacement_point(firstMesh,node_X,noxe_y):
+    """ this function is used to calculate the transfer displacement from firstMesh to secondMesh
+    Args:
+        firstMesh(Mesh): the first mesh
+        secondMesh(Mesh): the second mesh
+    Returns:
+        Mesh: the second mesh with transfered displacement
+    """
     point=[node_X,noxe_y]
     id_element_center=isInsideElement.one_kernel_check_PointIsInsideElements(point,firstMesh.GiveElementsNumpyArrayWithCoordinates())
     if len(id_element_center) >= 1:

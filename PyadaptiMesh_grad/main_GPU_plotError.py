@@ -14,8 +14,11 @@ from Reader_handler import reader
 from Func_parallel_calMeshSRP import mul_point_ALL
 
 from Func_parallel_calFemValue import calFemValue
-
+from Plot_Error_tecplot import plotError
 from Plot_Error import show_countourError
+from Plot_PureError_tecplot import plotPureError
+from Plot_PureError import show_countourPureError
+from Write_csvfileError_Absoloute import Write_csvfileErrorABS
 from Write_csvfileError import Write_csvfileError
 import re_iding
 import time
@@ -45,9 +48,12 @@ def Plot_Error(csvFile,inpFile,savePath):
     #calculate the step mesh error and save it
     print(f"info    : calculating  mesh error and save it")
     maximumError=[i.Error for i in firstMesh.JarOfElement.elements]
-    show_countourError(firstMesh,savePath,f"Error",f"Error",0,max(maximumError))
+    show_countourError(firstMesh,savePath,f"Error",0,max(maximumError))
+    show_countourPureError(firstMesh,savePath,f"PureError",0,max(maximumError))
+    plotError(firstMesh,savePath,f"Error")
+    plotPureError(firstMesh,savePath,f"PureError")
     Write_csvfileError(firstMesh,savePath)
-  
+    Write_csvfileErrorABS(firstMesh,savePath)
   
 if __name__ == "__main__":
     time_start = time.time()

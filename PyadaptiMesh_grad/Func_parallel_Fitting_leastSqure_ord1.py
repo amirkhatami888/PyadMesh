@@ -2,37 +2,42 @@
 # mail: amirkhatami@gmail.com
 # importing libraries
 import numpy as np
-import cupy as cp
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import cross_val_score
 def regressor(Data,x,y):
-    """
-    This function fits data with two input variables using the least squares method with Cupy.
+    """this fuction for fitting data with two input variables   
 
     Args:
-        Data (cupy array): Input data with two input variables and one output variable
-        x (float): First input variable
-        y (float): Second input variable
+        Data (numpy array): input data with two input variables and one output variable
+        x (float): first input variable  
+        y (float): second input variable
 
     Returns:
-        float: Prediction of output variable
+        float: prediction of output variable
     """
-    # Discrete data into input and output
-    X = Data[:, :-1]
-    Y = Data[:, -1]
-    X = cp.array(X, dtype=cp.float32)
-    Y = cp.array(Y, dtype=cp.float32)
-    # Augmenting X with bias term
-    X = cp.hstack((X, cp.ones((X.shape[0], 1))))
+    #discrete data in to input and output
+    X=Data[:,:-1]
+    Y=Data[:,-1]
+    X=np.array(X,dtype=np.float64)
+    Y=np.array(Y,dtype=np.float64)
+    x=np.float64(x)
+    y=np.float64(y)
 
-    # Finding the parameters using the least squares method
-    X_transpose = cp.transpose(X)
-    XTX_inv = cp.linalg.inv(cp.dot(X_transpose, X))
-    XTY = cp.dot(X_transpose, Y)
-    theta = cp.dot(XTX_inv, XTY)
+    # finding the best degree for polynomial fitting using cross-validation for least squre method
+    degrees = range(1, len(X[0]))
 
-    # Creating input array for prediction
-    x_ = cp.array([[x, y, 1]])
-
-    # Predicting the output variable
-    y_ = cp.dot(x_, theta)
-
-    return float(y_[0])
+    # degrees = [1]
+    MSEs = []
+    for degree in degrees :
+        coef = np.polyfit(X[:,0], Y, degree)
+        y_pred = np.polyval(coef, X[:,0])
+        MSE = np.mean((Y - y_pred)**2)
+        MSEs.append(MSE)
+    bestdegree = degrees[MSEs.index(min(MSEs))]
+    # fitting the data with the best degree
+    coef = np.polyfit(X[:,0], Y, bestdegree)
+    y_pred = np.polyval(coef, X[:,0])
+    y_ = np.polyval(coef, x)
+    return float(y_)
+        

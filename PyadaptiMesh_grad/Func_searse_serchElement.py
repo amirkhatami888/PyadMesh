@@ -1,7 +1,6 @@
 # author: amirhossein khatami
 # mail: amirkhatami@gmail.com
 import numpy as np
-from numba import cuda
 
 
 

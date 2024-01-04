@@ -5,6 +5,19 @@ from numba import cuda
 
 @cuda.jit('int32(float64,float64,float64,float64,float64,float64,float64,float64)',device=True)
 def checker(x_a,y_a,x_b,y_b,x_c,y_c,O_x,O_y):
+    """this function is used to check if the point is inside the triangle or not
+    Args:
+        x_a (float): x of point first vertex
+        y_a (float): y of point first vertex
+        x_b (float): x of point second vertex
+        y_b (float): y of point second vertex
+        x_c (float): x of point third vertex
+        y_c (float): y of point third vertex
+        O_x (float): x of point O
+        O_y (float): y of point O
+    Returns:
+        int: 1 if the point is inside the triangle and -1 if the point is outside the triangle
+    """
     telerance=1e-12
     if ((x_b-x_a)*(O_y-y_a)-(y_b-y_a)*(O_x-x_a) <= telerance and
         (x_c-x_b)*(O_y-y_b)-(y_c-y_b)*(O_x-x_b) <= telerance and
@@ -21,6 +34,18 @@ def checker(x_a,y_a,x_b,y_b,x_c,y_c,O_x,O_y):
 
 @cuda.jit('void(float64[:],float64[:],float64[:],float64[:],float64[:],float64[:],float64[:],float64[:],int32[:,:])')
 def mul_check_PointIsInsideTriangles(point_x, point_y, x_a, y_a, x_b, y_b, x_c, y_c, ans):
+    """this function is used to check if the point is inside the triangle or not
+    Args:
+        point_x (numpy array float64): x of point O
+        point_y (numpy array float64): y of point O
+        x_a (numpy array float64): x of point first vertex
+        y_a (numpy array float64): y of point first vertex
+        x_b (numpy array float64): x of point second vertex
+        y_b (numpy array float64): y of point second vertex
+        x_c (numpy array float64): x of point third vertex
+        y_c (numpy array float64): y of point third vertex
+        ans (numpy array int32): 1 if the point is inside the triangle and -1 if the point is outside the triangle
+    """
     i, j = cuda.grid(2)
     if i < ans.shape[0] and j < ans.shape[1]:
         ans[i, j] = checker(x_a[i], y_a[i], x_b[i], y_b[i], x_c[i], y_c[i], point_x[j], point_y[j])
@@ -45,6 +70,13 @@ def one_check_PointIsInsideTriangles(point_x,point_y,x_a,y_a,x_b,y_b,x_c,y_c,ans
         ans[i]=checker(x_a[i],y_a[i],x_b[i],y_b[i],x_c[i],y_c[i],point_x,point_y)
 
 def mul_kernel_check_PointIsInsideElements(points, ElementsMatrixWithCoordinates,thread_x=32,thread_y=32):
+    """this function is used to check if the point is inside the triangle or not
+    Args:
+        points (numpy array float64): x and y of point O
+        ElementsMatrixWithCoordinates (numpy array float64): x and y of vertices of triangles
+    Returns:
+        numpy array int32: 1 if the point is inside the triangle and -1 if the point is outside the triangle
+    """
     d_ans = cuda.device_array((len(ElementsMatrixWithCoordinates), len(points)), dtype=np.int32)
     d_element_n1_xs = cuda.to_device(np.ascontiguousarray(ElementsMatrixWithCoordinates[:, 1].flatten(), dtype=np.float64))
     d_element_n1_ys = cuda.to_device(np.ascontiguousarray(ElementsMatrixWithCoordinates[:, 2].flatten(), dtype=np.float64))

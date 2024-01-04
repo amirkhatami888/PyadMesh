@@ -8,6 +8,12 @@ import numpy as np
 import os
 
 def plotError(Mesh,path,name_plot):
+    """this function is used to plot the error of the mesh
+    Args:
+        Mesh(Mesh): the mesh
+        path(str): the path to save the displacement
+        name_plot(str): the name of the displacement
+    """
     index_li=[]
     x=[]
     y=[]
