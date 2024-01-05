@@ -43,7 +43,7 @@ To get started with PyAdMesh, follow these steps:
 ### Usage
 
 is there two  way for using this softwatre 
-1. use the python code in the main.py file and run GUI.py file base on PySide6 for each part of software 
+1. use the python code in the main.py file and run GUI file base on PySide6 for each part of software 
 2. use the this in the terminal or cmd
 for use this software for Calculating information(inner variable) at a point in the domain using both CPU 
 ```sh
