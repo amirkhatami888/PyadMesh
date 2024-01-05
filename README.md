@@ -59,7 +59,7 @@ cd PyadMesh_grad;python main_CPU_transferMesh.py CSV_file_name.csv Input_file_na
 ```
 for Transferring displacement gradient information(inner variable) from one Mesh to another using GPU
 ```sh
-****python main_GPU_transferMesh.py CSV_file_name.csv Input_file_name.inp datFile_name.dat save_directory thread_x thread_y
+cd PyadMesh_grad;python main_GPU_transferMesh.py CSV_file_name.csv Input_file_name.inp datFile_name.dat save_directory thread_x thread_y
 ```
 for Transferring displacement gradient information(inner variable) from one Mesh to another using GPU and CPU
 ```sh
