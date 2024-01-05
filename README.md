@@ -47,39 +47,39 @@ is there two  way for using this softwatre
 2. use the this in the terminal or cmd
 for use this software for Calculating information(inner variable) at a point in the domain using both CPU 
 ```sh
-python PyadMesh_grad/main_CPU_transferpoint.py CSV_file_name.csv Input_file_name.inp X Y
+cd PyadMesh_grad;python main_CPU_transferpoint.py CSV_file_name.csv Input_file_name.inp X Y
 ```
 for use this software for Calculating information(inner variable) at a point in the domain using both GPU 
 ```sh
-python PyadMesh_grad/main_GPU_transferpoint.py CSV_file_name.csv Input_file_name.inp X Y
+cd PyadMesh_grad;python main_GPU_transferpoint.py CSV_file_name.csv Input_file_name.inp X Y
 ```
 for Transferring displacement gradient information(inner variable) from one Mesh to another using CPU
 ```sh
-python PyadMesh_grad/main_CPU_transferMesh.py CSV_file_name.csv Input_file_name.inp datFile_name.dat save_directory 
+cd PyadMesh_grad;python main_CPU_transferMesh.py CSV_file_name.csv Input_file_name.inp datFile_name.dat save_directory 
 ```
 for Transferring displacement gradient information(inner variable) from one Mesh to another using GPU
 ```sh
-python PyadMesh_grad/main_GPU_transferMesh.py CSV_file_name.csv Input_file_name.inp datFile_name.dat save_directory thread_x thread_y
+****python main_GPU_transferMesh.py CSV_file_name.csv Input_file_name.inp datFile_name.dat save_directory thread_x thread_y
 ```
 for Transferring displacement gradient information(inner variable) from one Mesh to another using GPU and CPU
 ```sh
-python PyadMesh_grad/main_GPU_parallel_transferMesh.py CSV_file_name.csv Input_file_name.inp datFile_name.dat save_directory thread_x thread_y number_of_core_for_CPU
+cd PyadMesh_grad;python main_GPU_parallel_transferMesh.py CSV_file_name.csv Input_file_name.inp datFile_name.dat save_directory thread_x thread_y number_of_core_for_CPU
 ```
 for use autoMesh Genreation base on adptive finite element method and transfer information from one mesh to another on GPU
 ```sh
-python PyadMesh_grad/main_GPU_auto_generateMesh.py CSV_file_name.csv Input_file_name.inp IGES_file_name.igs save_directory  max_iteration_number ratio_selection
+cd PyadMesh_grad;python main_GPU_auto_generateMesh.py CSV_file_name.csv Input_file_name.inp IGES_file_name.igs save_directory  max_iteration_number ratio_selection
 ```
 for use autoMesh Genreation base on adptive finite element method and transfer information from one mesh to another on CPU
 ```sh
-python PyadMesh_grad/main_CPU_auto_generateMesh.py CSV_file_name.csv Input_file_name.inp IGES_file_name.igs save_directory  max_iteration_number ratio_selection
+cd PyadMesh_grad;python main_CPU_auto_generateMesh.py CSV_file_name.csv Input_file_name.inp IGES_file_name.igs save_directory  max_iteration_number ratio_selection
 ```
 for ploting and calculating estimation error on mesh on GPU
 ```sh
-python PyadMesh_grad/main_GPU_plotError.py CSV_file_name.csv Input_file_name.inp save_directory
+cd PyadMesh_grad;python main_GPU_plotError.py CSV_file_name.csv Input_file_name.inp save_directory
 ```
 for ploting and calculating estimation error on mesh on CPU
 ```sh
-python PyadMesh_grad/main_CPU_plotError.py CSV_file_name.csv Input_file_name.inp save_directory
+cd PyadMesh_grad;python main_CPU_plotError.py CSV_file_name.csv Input_file_name.inp save_directory
 ```
 
 ## License
