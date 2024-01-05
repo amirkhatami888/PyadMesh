@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DataStructure_Point_Gaussian module &mdash; PyAdMesh-disp  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PyAdMesh-disp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">DataStructure_Point_Gaussian module</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyAdMesh-disp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">DataStructure_Point_Gaussian module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/DataStructure_Point_Gaussian.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-DataStructure_Point_Gaussian">
+<span id="datastructure-point-gaussian-module"></span><h1>DataStructure_Point_Gaussian module<a class="headerlink" href="#module-DataStructure_Point_Gaussian" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="DataStructure_Point_Gaussian.GaussianPoint">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataStructure_Point_Gaussian.</span></span><span class="sig-name descname"><span class="pre">GaussianPoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gradient</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Point_Gaussian.GaussianPoint" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>this class is used to store all the gussian points in a list
+.. attribute:: x</p>
+<blockquote>
+<div><p>the x coordinate of the gussian point</p>
+</div></blockquote>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="DataStructure_Point_Gaussian.GaussianPoint.y">
+<span class="sig-name descname"><span class="pre">y</span></span><a class="headerlink" href="#DataStructure_Point_Gaussian.GaussianPoint.y" title="Permalink to this definition"></a></dt>
+<dd><p>the y coordinate of the gussian point</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="DataStructure_Point_Gaussian.GaussianPoint.gradient">
+<span class="sig-name descname"><span class="pre">gradient</span></span><a class="headerlink" href="#DataStructure_Point_Gaussian.GaussianPoint.gradient" title="Permalink to this definition"></a></dt>
+<dd><p>the gradient of the gussian point</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="DataStructure_Point_Gaussian.GaussianPoint.element">
+<span class="sig-name descname"><span class="pre">element</span></span><a class="headerlink" href="#DataStructure_Point_Gaussian.GaussianPoint.element" title="Permalink to this definition"></a></dt>
+<dd><p>the element that the gussian point belongs to</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Point_Gaussian.GaussianPoint.Give_gradient">
+<span class="sig-name descname"><span class="pre">Give_gradient</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Point_Gaussian.GaussianPoint.Give_gradient" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the gradient of the gussian point
+:returns: the gradient of the gussian point
+:rtype: float</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Point_Gaussian.GaussianPoint.Give_x">
+<span class="sig-name descname"><span class="pre">Give_x</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Point_Gaussian.GaussianPoint.Give_x" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the x coordinate of the gussian point
+:returns: the x coordinate of the gussian point
+:rtype: float</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Point_Gaussian.GaussianPoint.Give_y">
+<span class="sig-name descname"><span class="pre">Give_y</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Point_Gaussian.GaussianPoint.Give_y" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the y coordinate of the gussian point
+:returns: the y coordinate of the gussian point
+:rtype: float</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Point_Gaussian.GaussianPoint.ToMatrix">
+<span class="sig-name descname"><span class="pre">ToMatrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Point_Gaussian.GaussianPoint.ToMatrix" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the gussian point as a matrix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the gussian point as a matrix</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Point_Gaussian.GaussianPoint.ToMatrixWithCoordinates">
+<span class="sig-name descname"><span class="pre">ToMatrixWithCoordinates</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Point_Gaussian.GaussianPoint.ToMatrixWithCoordinates" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the gussian point as a matrix with coordinates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the gussian point as a matrix with coordinates</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Point_Gaussian.GaussianPoint.ToNumPyArray">
+<span class="sig-name descname"><span class="pre">ToNumPyArray</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Point_Gaussian.GaussianPoint.ToNumPyArray" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the gussian point as a numpy array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the gussian point as a numpy array</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpy array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Point_Gaussian.GaussianPoint.ToNumPyArrayWithCoordinates">
+<span class="sig-name descname"><span class="pre">ToNumPyArrayWithCoordinates</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Point_Gaussian.GaussianPoint.ToNumPyArrayWithCoordinates" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the gussian point as a numpy array with coordinates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the gussian point as a numpy array with coordinates</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpy array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Point_Gaussian.GaussianPoint.distanceToCenter">
+<span class="sig-name descname"><span class="pre">distanceToCenter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Point_Gaussian.GaussianPoint.distanceToCenter" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the distance of the gussian point to the center of the element
+:returns: the distance of the gussian point to the center of the element
+:rtype: float</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Point_Gaussian.GaussianPoint.distanceToPoint">
+<span class="sig-name descname"><span class="pre">distanceToPoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Point_Gaussian.GaussianPoint.distanceToPoint" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the distance of the gussian point to another gussian point
+:param other: the other gussian point
+:type other: GussianPoint</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the distance of the gussian point to the other gussian point</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Point_Gaussian.GaussianPoint.setElement">
+<span class="sig-name descname"><span class="pre">setElement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Point_Gaussian.GaussianPoint.setElement" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to set the element that the gussian point belongs to
+:param element: the element that the gussian point belongs to
+:type element: Element</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Point_Gaussian.GaussianPoint.set_gradient">
+<span class="sig-name descname"><span class="pre">set_gradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gradient</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Point_Gaussian.GaussianPoint.set_gradient" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to set the gradient of the gussian point
+:param gradient: the gradient of the gussian point
+:type gradient: float</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Amir khatami.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

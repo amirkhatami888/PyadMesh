@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Func_parallel_isInsideElement_disp module &mdash; PyAdMesh-grad  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PyAdMesh-grad
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Func_parallel_isInsideElement_disp module</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyAdMesh-grad</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Func_parallel_isInsideElement_disp module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Func_parallel_isInsideElement_disp.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-Func_parallel_isInsideElement_disp">
+<span id="func-parallel-isinsideelement-disp-module"></span><h1>Func_parallel_isInsideElement_disp module<a class="headerlink" href="#module-Func_parallel_isInsideElement_disp" title="Permalink to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="Func_parallel_isInsideElement_disp.checker">
+<span class="sig-prename descclassname"><span class="pre">Func_parallel_isInsideElement_disp.</span></span><span class="sig-name descname"><span class="pre">checker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">O_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">O_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Func_parallel_isInsideElement_disp.checker" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to check if the point is inside the element
+:param x_a: the x coordinate of the first node of the element
+:type x_a: float
+:param y_a: the y coordinate of the first node of the element
+:type y_a: float
+:param x_b: the x coordinate of the second node of the element
+:type x_b: float
+:param y_b: the y coordinate of the second node of the element
+:type y_b: float
+:param x_c: the x coordinate of the third node of the element
+:type x_c: float
+:param y_c: the y coordinate of the third node of the element
+:type y_c: float
+:param O_x: the x coordinate of the point
+:type O_x: float
+:param O_y: the y coordinate of the point
+:type O_y: float</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1 if the point is inside the element and -1 if the point is outside the element</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Func_parallel_isInsideElement_disp.mul_check_PointIsInsideTriangles">
+<span class="sig-prename descclassname"><span class="pre">Func_parallel_isInsideElement_disp.</span></span><span class="sig-name descname"><span class="pre">mul_check_PointIsInsideTriangles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ans</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Func_parallel_isInsideElement_disp.mul_check_PointIsInsideTriangles" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to check if the points are inside the elements
+:param point_x: the x coordinates of the points
+:type point_x: numpy array
+:param point_y: the y coordinates of the points
+:type point_y: numpy array
+:param x_a: the x coordinates of the first node of the elements
+:type x_a: numpy array
+:param y_a: the y coordinates of the first node of the elements
+:type y_a: numpy array
+:param x_b: the x coordinates of the second node of the elements
+:type x_b: numpy array
+:param y_b: the y coordinates of the second node of the elements
+:type y_b: numpy array
+:param x_c: the x coordinates of the third node of the elements
+:type x_c: numpy array
+:param y_c: the y coordinates of the third node of the elements
+:type y_c: numpy array
+:param ans: the answer
+:type ans: numpy array</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Func_parallel_isInsideElement_disp.mul_kernel_check_PointIsInsideElements">
+<span class="sig-prename descclassname"><span class="pre">Func_parallel_isInsideElement_disp.</span></span><span class="sig-name descname"><span class="pre">mul_kernel_check_PointIsInsideElements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ElementsMatrixWithCoordinates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thread_x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thread_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Func_parallel_isInsideElement_disp.mul_kernel_check_PointIsInsideElements" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to check if the points are inside the elements
+:param points: the points
+:type points: numpy array
+:param ElementsMatrixWithCoordinates: the elements
+:type ElementsMatrixWithCoordinates: numpy array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the list of elements that the points are inside</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, amir khatami.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

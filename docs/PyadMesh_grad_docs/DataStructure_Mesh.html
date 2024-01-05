@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DataStructure_Mesh module &mdash; PyAdMesh-grad  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PyAdMesh-grad
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">DataStructure_Mesh module</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyAdMesh-grad</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">DataStructure_Mesh module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/DataStructure_Mesh.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-DataStructure_Mesh">
+<span id="datastructure-mesh-module"></span><h1>DataStructure_Mesh module<a class="headerlink" href="#module-DataStructure_Mesh" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="DataStructure_Mesh.Mesh">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataStructure_Mesh.</span></span><span class="sig-name descname"><span class="pre">Mesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">JarOfNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">JarOfGussianPoint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">JarOfElement</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Mesh.Mesh" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>this class is used to store all mesh data
+.. attribute:: name</p>
+<blockquote>
+<div><p>the name of the mesh</p>
+</div></blockquote>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="DataStructure_Mesh.Mesh.JarOfNodes">
+<span class="sig-name descname"><span class="pre">JarOfNodes</span></span><a class="headerlink" href="#DataStructure_Mesh.Mesh.JarOfNodes" title="Permalink to this definition"></a></dt>
+<dd><p>a jar of nodes</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="DataStructure_Mesh.Mesh.JarOfGussianPoint">
+<span class="sig-name descname"><span class="pre">JarOfGussianPoint</span></span><a class="headerlink" href="#DataStructure_Mesh.Mesh.JarOfGussianPoint" title="Permalink to this definition"></a></dt>
+<dd><p>a jar of gussian points</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="DataStructure_Mesh.Mesh.JarOfElement">
+<span class="sig-name descname"><span class="pre">JarOfElement</span></span><a class="headerlink" href="#DataStructure_Mesh.Mesh.JarOfElement" title="Permalink to this definition"></a></dt>
+<dd><p>a jar of elements</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Mesh.Mesh.GiveElements">
+<span class="sig-name descname"><span class="pre">GiveElements</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Mesh.Mesh.GiveElements" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the elements in the jar</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the elements in the jar</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Mesh.Mesh.GiveElementsMatrix">
+<span class="sig-name descname"><span class="pre">GiveElementsMatrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Mesh.Mesh.GiveElementsMatrix" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the elements in the jar as a matrix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the elements in the jar as a matrix</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Mesh.Mesh.GiveElementsMatrixWithCoordinates">
+<span class="sig-name descname"><span class="pre">GiveElementsMatrixWithCoordinates</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Mesh.Mesh.GiveElementsMatrixWithCoordinates" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the elements in the jar as a matrix with coordinates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the elements in the jar as a matrix with coordinates</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Mesh.Mesh.GiveElementsNumpyArray">
+<span class="sig-name descname"><span class="pre">GiveElementsNumpyArray</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Mesh.Mesh.GiveElementsNumpyArray" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the elements in the jar as a numpy array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the elements in the jar as a numpy array</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpyarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Mesh.Mesh.GiveElementsNumpyArrayWithCoordinates">
+<span class="sig-name descname"><span class="pre">GiveElementsNumpyArrayWithCoordinates</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Mesh.Mesh.GiveElementsNumpyArrayWithCoordinates" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the elements in the jar as a numpy array with coordinates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the elements in the jar as a numpy array with coordinates</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpyarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Mesh.Mesh.GiveGussianPoints">
+<span class="sig-name descname"><span class="pre">GiveGussianPoints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Mesh.Mesh.GiveGussianPoints" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the gussian points in the jar</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the gussian points in the jar</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Mesh.Mesh.GiveJarOfElement">
+<span class="sig-name descname"><span class="pre">GiveJarOfElement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Mesh.Mesh.GiveJarOfElement" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the jar of elements</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the jar of elements</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Mesh.Mesh.GiveJarOfGussianPoint">
+<span class="sig-name descname"><span class="pre">GiveJarOfGussianPoint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Mesh.Mesh.GiveJarOfGussianPoint" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the jar of gussian points</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the jar of gussian points</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Mesh.Mesh.GiveJarOfNodes">
+<span class="sig-name descname"><span class="pre">GiveJarOfNodes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Mesh.Mesh.GiveJarOfNodes" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the jar of nodes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the jar of nodes</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Mesh.Mesh.GiveNodeCyWithDisplacement">
+<span class="sig-name descname"><span class="pre">GiveNodeCyWithDisplacement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Mesh.Mesh.GiveNodeCyWithDisplacement" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the nodes in the jar as a numpy array with displacement</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the nodes in the jar as a numpy array with displacement</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpyarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Mesh.Mesh.GiveNodeMatrix">
+<span class="sig-name descname"><span class="pre">GiveNodeMatrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Mesh.Mesh.GiveNodeMatrix" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the nodes in the jar as a matrix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the nodes in the jar as a matrix</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Mesh.Mesh.GiveNodeMatrixWithID">
+<span class="sig-name descname"><span class="pre">GiveNodeMatrixWithID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Mesh.Mesh.GiveNodeMatrixWithID" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the nodes in the jar as a matrix with ID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the nodes in the jar as a matrix with ID</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Mesh.Mesh.GiveNodeMatrixwithDisplacement">
+<span class="sig-name descname"><span class="pre">GiveNodeMatrixwithDisplacement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Mesh.Mesh.GiveNodeMatrixwithDisplacement" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the nodes in the jar as a matrix with displacement</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the nodes in the jar as a matrix with displacement</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Mesh.Mesh.GiveNodeNumpyArray">
+<span class="sig-name descname"><span class="pre">GiveNodeNumpyArray</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Mesh.Mesh.GiveNodeNumpyArray" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the nodes in the jar as a numpy array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the nodes in the jar as a numpy array</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpyarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Mesh.Mesh.GiveNodeNumpyArrayWithDisplacementAndID">
+<span class="sig-name descname"><span class="pre">GiveNodeNumpyArrayWithDisplacementAndID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Mesh.Mesh.GiveNodeNumpyArrayWithDisplacementAndID" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the nodes in the jar as a numpy array with displacement and ID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the nodes in the jar as a numpy array with displacement and ID</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpyarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Mesh.Mesh.GiveNodeNumpyArrayWithID">
+<span class="sig-name descname"><span class="pre">GiveNodeNumpyArrayWithID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Mesh.Mesh.GiveNodeNumpyArrayWithID" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the nodes in the jar as a numpy array with ID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the nodes in the jar as a numpy array with ID</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpyarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Mesh.Mesh.GiveNodes">
+<span class="sig-name descname"><span class="pre">GiveNodes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Mesh.Mesh.GiveNodes" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the nodes in the jar</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the nodes in the jar</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>nodes</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, amir khatami.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

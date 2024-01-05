@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DataStructure_Point_Node module &mdash; PyAdMesh-grad  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PyAdMesh-grad
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">DataStructure_Point_Node module</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyAdMesh-grad</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">DataStructure_Point_Node module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/DataStructure_Point_Node.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-DataStructure_Point_Node">
+<span id="datastructure-point-node-module"></span><h1>DataStructure_Point_Node module<a class="headerlink" href="#module-DataStructure_Point_Node" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="DataStructure_Point_Node.NodePoint">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataStructure_Point_Node.</span></span><span class="sig-name descname"><span class="pre">NodePoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stepSize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Point_Node.NodePoint" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>this class is used to store the data of a node
+.. attribute:: id</p>
+<blockquote>
+<div><p>the id of the node</p>
+</div></blockquote>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="DataStructure_Point_Node.NodePoint.x">
+<span class="sig-name descname"><span class="pre">x</span></span><a class="headerlink" href="#DataStructure_Point_Node.NodePoint.x" title="Permalink to this definition"></a></dt>
+<dd><p>the x coordinate of the node</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="DataStructure_Point_Node.NodePoint.y">
+<span class="sig-name descname"><span class="pre">y</span></span><a class="headerlink" href="#DataStructure_Point_Node.NodePoint.y" title="Permalink to this definition"></a></dt>
+<dd><p>the y coordinate of the node</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="DataStructure_Point_Node.NodePoint.U1">
+<span class="sig-name descname"><span class="pre">U1</span></span><a class="headerlink" href="#DataStructure_Point_Node.NodePoint.U1" title="Permalink to this definition"></a></dt>
+<dd><p>the displacement of the node in x direction</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="DataStructure_Point_Node.NodePoint.U2">
+<span class="sig-name descname"><span class="pre">U2</span></span><a class="headerlink" href="#DataStructure_Point_Node.NodePoint.U2" title="Permalink to this definition"></a></dt>
+<dd><p>the displacement of the node in y direction</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="DataStructure_Point_Node.NodePoint.stepSize">
+<span class="sig-name descname"><span class="pre">stepSize</span></span><a class="headerlink" href="#DataStructure_Point_Node.NodePoint.stepSize" title="Permalink to this definition"></a></dt>
+<dd><p>the step size of the node</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="DataStructure_Point_Node.NodePoint.adjacentNodes">
+<span class="sig-name descname"><span class="pre">adjacentNodes</span></span><a class="headerlink" href="#DataStructure_Point_Node.NodePoint.adjacentNodes" title="Permalink to this definition"></a></dt>
+<dd><p>the adjacent nodes of the node</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="DataStructure_Point_Node.NodePoint.elementSize">
+<span class="sig-name descname"><span class="pre">elementSize</span></span><a class="headerlink" href="#DataStructure_Point_Node.NodePoint.elementSize" title="Permalink to this definition"></a></dt>
+<dd><p>the size of the element</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="DataStructure_Point_Node.NodePoint.dervirative_phi">
+<span class="sig-name descname"><span class="pre">dervirative_phi</span></span><a class="headerlink" href="#DataStructure_Point_Node.NodePoint.dervirative_phi" title="Permalink to this definition"></a></dt>
+<dd><p>the dervirative of the phi</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="DataStructure_Point_Node.NodePoint.displacement">
+<span class="sig-name descname"><span class="pre">displacement</span></span><a class="headerlink" href="#DataStructure_Point_Node.NodePoint.displacement" title="Permalink to this definition"></a></dt>
+<dd><p>the displacement of the node</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="DataStructure_Point_Node.NodePoint.phi">
+<span class="sig-name descname"><span class="pre">phi</span></span><a class="headerlink" href="#DataStructure_Point_Node.NodePoint.phi" title="Permalink to this definition"></a></dt>
+<dd><p>the phi of the node</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Point_Node.NodePoint.GiveID">
+<span class="sig-name descname"><span class="pre">GiveID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Point_Node.NodePoint.GiveID" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the id of the node
+:returns: the id of the node
+:rtype: int</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Point_Node.NodePoint.Give_displacement">
+<span class="sig-name descname"><span class="pre">Give_displacement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Point_Node.NodePoint.Give_displacement" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the displacement of the node
+:returns: the displacement of the node
+:rtype: float</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Point_Node.NodePoint.Give_x">
+<span class="sig-name descname"><span class="pre">Give_x</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Point_Node.NodePoint.Give_x" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the x coordinate of the node
+:returns: the x coordinate of the node
+:rtype: float</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Point_Node.NodePoint.Give_y">
+<span class="sig-name descname"><span class="pre">Give_y</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Point_Node.NodePoint.Give_y" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the y coordinate of the node
+:returns: the y coordinate of the node
+:rtype: float</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Point_Node.NodePoint.SetID">
+<span class="sig-name descname"><span class="pre">SetID</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ID</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Point_Node.NodePoint.SetID" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to set the id of the node
+:param ID: the id of the node
+:type ID: int</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Point_Node.NodePoint.ToMatrix">
+<span class="sig-name descname"><span class="pre">ToMatrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Point_Node.NodePoint.ToMatrix" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the node as a matrix
+:returns: the node as a matrix
+:rtype: list</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Point_Node.NodePoint.ToMatrixWithDisplacement">
+<span class="sig-name descname"><span class="pre">ToMatrixWithDisplacement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Point_Node.NodePoint.ToMatrixWithDisplacement" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the node as a matrix with displacement
+:returns: the node as a matrix with displacement
+:rtype: list</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Point_Node.NodePoint.ToMatrixWithID">
+<span class="sig-name descname"><span class="pre">ToMatrixWithID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Point_Node.NodePoint.ToMatrixWithID" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the node as a matrix with id
+:returns: the node as a matrix with id
+:rtype: list</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Point_Node.NodePoint.ToMatrixWithIDAndDisplacement">
+<span class="sig-name descname"><span class="pre">ToMatrixWithIDAndDisplacement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Point_Node.NodePoint.ToMatrixWithIDAndDisplacement" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the node as a matrix with id and displacement
+:returns: the node as a matrix with id and displacement
+:rtype: list</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">adjacentNodes</span></span><a class="headerlink" href="#id0" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the adjacent nodes of the node
+Returns:
+list: the adjacent nodes of the node</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dervirative_phi</span></span><a class="headerlink" href="#id1" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the dervirative of the phi
+:returns: the dervirative of the phi
+:rtype: float</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">displacement</span></span><a class="headerlink" href="#id2" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the displacement of the node
+:returns: the displacement of the node
+:rtype: float</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DataStructure_Point_Node.NodePoint.distanceToPoint">
+<span class="sig-name descname"><span class="pre">distanceToPoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataStructure_Point_Node.NodePoint.distanceToPoint" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the distance of the node to another node
+:param other: the other node
+:type other: NodePoint</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the distance of the node to another node</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id3">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elementSize</span></span><a class="headerlink" href="#id3" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the size of the element
+:returns: the size of the element
+:rtype: float</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id4">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">phi</span></span><a class="headerlink" href="#id4" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to return the phi of the node
+:returns: the phi of the node
+:rtype: float</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, amir khatami.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

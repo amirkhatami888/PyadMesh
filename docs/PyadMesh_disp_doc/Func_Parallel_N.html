@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Func_Parallel_N module &mdash; PyAdMesh-disp  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PyAdMesh-disp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Func_Parallel_N module</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyAdMesh-disp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Func_Parallel_N module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Func_Parallel_N.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-Func_Parallel_N">
+<span id="func-parallel-n-module"></span><h1>Func_Parallel_N module<a class="headerlink" href="#module-Func_Parallel_N" title="Permalink to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="Func_Parallel_N.calculator_N">
+<span class="sig-prename descclassname"><span class="pre">Func_Parallel_N.</span></span><span class="sig-name descname"><span class="pre">calculator_N</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Func_Parallel_N.calculator_N" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to calculate the N of the point
+:param point_x: x of point O
+:type point_x: numpy array float64
+:param point_y: y of point O
+:type point_y: numpy array float64
+:param x_a: x of point first vertex
+:type x_a: numpy array float64
+:param y_a: y of point first vertex
+:type y_a: numpy array float64
+:param x_b: x of point second vertex
+:type x_b: numpy array float64
+:param y_b: y of point second vertex
+:type y_b: numpy array float64
+:param x_c: x of point third vertex
+:type x_c: numpy array float64
+:param y_c: y of point third vertex
+:type y_c: numpy array float64
+:param N: the N of the point
+:type N: numpy array float64</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Func_Parallel_N.calculator_N1">
+<span class="sig-prename descclassname"><span class="pre">Func_Parallel_N.</span></span><span class="sig-name descname"><span class="pre">calculator_N1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_A</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Func_Parallel_N.calculator_N1" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to calculate the N1 of the point
+:param x1: x of point first vertex
+:type x1: float
+:param y1: y of point first vertex
+:type y1: float
+:param x2: x of point second vertex
+:type x2: float
+:param y2: y of point second vertex
+:type y2: float
+:param x3: x of point third vertex
+:type x3: float
+:param y3: y of point third vertex
+:type y3: float
+:param x_A: x of point A
+:type x_A: float
+:param y_A: y of point A
+:type y_A: float</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the N1 of the point</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Func_Parallel_N.calculator_N2">
+<span class="sig-prename descclassname"><span class="pre">Func_Parallel_N.</span></span><span class="sig-name descname"><span class="pre">calculator_N2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_A</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Func_Parallel_N.calculator_N2" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to calculate the N2 of the point
+:param x1: x of point first vertex
+:type x1: float
+:param y1: y of point first vertex
+:type y1: float
+:param x2: x of point second vertex
+:type x2: float
+:param y2: y of point second vertex
+:type y2: float
+:param x3: x of point third vertex
+:type x3: float
+:param y3: y of point third vertex
+:type y3: float
+:param x_A: x of point A
+:type x_A: float
+:param y_A: y of point A
+:type y_A: float</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the N2 of the point</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Func_Parallel_N.calculator_N3">
+<span class="sig-prename descclassname"><span class="pre">Func_Parallel_N.</span></span><span class="sig-name descname"><span class="pre">calculator_N3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_A</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Func_Parallel_N.calculator_N3" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to calculate the N3 of the point
+:param x1: x of point first vertex
+:type x1: float
+:param y1: y of point first vertex
+:type y1: float
+:param x2: x of point second vertex
+:type x2: float
+:param y2: y of point second vertex
+:type y2: float
+:param x3: x of point third vertex
+:type x3: float
+:param y3: y of point third vertex
+:type y3: float
+:param x_A: x of point A
+:type x_A: float
+:param y_A: y of point A
+:type y_A: float</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the N3 of the point</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Func_Parallel_N.mul_calculator_N">
+<span class="sig-prename descclassname"><span class="pre">Func_Parallel_N.</span></span><span class="sig-name descname"><span class="pre">mul_calculator_N</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Elements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thread_x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thread_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Func_Parallel_N.mul_calculator_N" title="Permalink to this definition"></a></dt>
+<dd><p>this function is used to calculate the N of the point
+:param points: the points
+:type points: numpy array float64
+:param Elements: the elements
+:type Elements: numpy array float64</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the N of the point</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpy array float64</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Amir khatami.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
