@@ -29,7 +29,7 @@ To get started with PyAdaptiMesh, follow these steps:
  1.Clone the PyAdaptiMesh repository to your local machine:
 
    ```sh
-   git clone https://github.com/your-username/pyadaptimesh.git
+   git clone https://github.com/amirkhatami888/PyadMesh.git
 
    ```
 2. Install the required packages:
