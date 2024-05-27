@@ -58,13 +58,17 @@ class JarOfElement:
         Returns:
             Element: the element with the given ID
         """
-        for i in self.elements:
-            if i.GiveID() == id:
-                return i
+        try:
+            if (self.elements[int(id-1)].id == id):
+                return self.elements[int(id)-1]
             else:
-                pass
-        print ("Error: Element with ID not found")
-        raise "Error: Element with ID not found"
+                raise "Error: Element with ID not found"
+        except:
+            for i in self.elements:
+                if i.GiveID() == id:
+                    return i
+            print ("Error: Element with ID not found")
+            raise "Error: Element with ID not found"
     
     def GiveElementWithNodes(self, n1, n2, n3):
         """this function is used to return the element with the given nodes

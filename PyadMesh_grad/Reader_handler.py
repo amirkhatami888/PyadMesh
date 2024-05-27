@@ -20,11 +20,11 @@ from Reader_myselfCSV   import myselfCSV_Gradient
 class reader:
     """class to read the mesh and the data files
     """
-    def __init__(self,mesh):
+    def __init__(self,mesh,relative_error_thereshold=0.001):
         """constructor of the class
         """
         self.mesh = mesh
-
+        self.relative_error_thereshold=relative_error_thereshold
     def read(self,path):
         """function to read the mesh and the data files
         """
@@ -36,7 +36,7 @@ class reader:
         if self.prefix_file == "inp":
             inp=abaqusINP(self.mesh, self.path)
             inp.readNode()
-            inp.readElement()
+            inp.readElement(self.relative_error_thereshold)
             
         elif self.prefix_file == "csv":
             if self.name_file == "final_mat":
@@ -49,6 +49,6 @@ class reader:
         elif self.prefix_file == "dat":
             dat=GmeshDAT(self.mesh, self.path)
             dat.readNode()
-            dat.readElement()
+            dat.readElement(self.relative_error_thereshold)
         else:
             print("Error: File type not supported")

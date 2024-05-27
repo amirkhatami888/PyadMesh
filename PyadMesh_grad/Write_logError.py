@@ -27,10 +27,10 @@ def ERORR_LOGER_write(file,step,mesh,stepSize):
     nu_element=len(mesh.GiveJarOfElement().elements)
     nu_nodes=len(mesh.JarOfNodes.nodes)
     li_ERORR=[element.Error for element in mesh.GiveJarOfElement().elements]
-    li_pure_ERORR=[element.Error for element in mesh.GiveJarOfElement().elements]
     li_pureERORR=[element.Error_pure for element in mesh.GiveJarOfElement().elements]
     File=open(file,"a")
     File.write(f"{step},{nu_nodes},{nu_element},\
-               {np.max(li_ERORR)},{np.min(li_ERORR)},{np.mean(li_ERORR)},{np.std(li_ERORR)},{np.max(li_pureERORR)},{np.min(li_pureERORR)},{np.mean(li_pureERORR)},{np.std(li_pureERORR)}\n")
+               {np.max(li_ERORR)},{np.min(li_ERORR)},{np.mean(li_ERORR)},{np.std(li_ERORR)},\
+               {np.max(li_pureERORR)},{np.min(li_pureERORR)},{np.mean(li_pureERORR)},{np.std(li_pureERORR)}\n")
     File.close()
     return np.max(li_ERORR),np.max(li_pureERORR)

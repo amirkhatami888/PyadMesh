@@ -21,7 +21,7 @@ from Write_csvfileError import Write_csvfileError
 import re_iding
 import time
 
-def Plot_Error(csvFile,inpFile,savePath):
+def Plot_Error(csvFile,inpFile,savePath,error_thereshold):
     """ this function plot error of mesh
     Args:
         csvFile (str): csv file path
@@ -35,8 +35,8 @@ def Plot_Error(csvFile,inpFile,savePath):
     first_Elements = JarOfElement()
     firstMesh = Mesh(first_Nodes,first_GussianPoints,first_Elements)
 
-    reader(firstMesh).read(inpFile)
-    reader(firstMesh).read(csvFile)
+    reader(firstMesh,error_thereshold).read(inpFile)
+    reader(firstMesh,error_thereshold).read(csvFile)
     re_iding.rename(firstMesh)
     firstMesh=calFemValue(firstMesh)
     #calculate the srp for the step mesh
@@ -54,7 +54,8 @@ if __name__ == "__main__":
     csvFile=sys.argv[1]
     inpFile=sys.argv[2]
     savePath=sys.argv[3]
-    Plot_Error(csvFile,inpFile,savePath)
+    error_thereshold=float(sys.argv[4])
+    Plot_Error(csvFile,inpFile,savePath,error_thereshold)
     time_end = time.time()
     print(f"info    : total time {time_end-time_start}")
     print("####################done####################")

@@ -48,6 +48,7 @@ if __name__ == "__main__":
     dispFile=sys.argv[7]
     plotType=sys.argv[8]
     meshAlgorithm=int(sys.argv[9])
+    error_thereshold=float(sys.argv[10])
     # core=2
     core=os.cpu_count()
     step=1
@@ -59,8 +60,8 @@ if __name__ == "__main__":
     first_Elements = JarOfElement()
     firstMesh = Mesh(first_Nodes,first_GussianPoints,first_Elements)
 
-    reader(firstMesh).read(inpFile)
-    reader(firstMesh).read(csvFile)
+    reader(firstMesh,error_thereshold).read(inpFile)
+    reader(firstMesh,error_thereshold).read(csvFile)
     Reader_disp.dispReader(firstMesh,dispFile).read()    
     
     re_iding.rename(firstMesh)
@@ -131,7 +132,7 @@ if __name__ == "__main__":
     step_Nodes = JarOfNodes()
     step_GussianPoints = JarOfGussianPoint()
     stepMesh = Mesh(step_Nodes,step_GussianPoints,step_Elements)
-    reader(stepMesh).read(new_mesh)
+    reader(stepMesh,error_thereshold).read(new_mesh)
     #tranfer data from first mesh to step mesh
     print(f"info    : transfering {step} mesh data to {step+1} mesh")
     
@@ -167,7 +168,7 @@ if __name__ == "__main__":
         print(f"nfo    : step    : {step}")
         #read steper mesh
         print(f"info    : reading {step} mesh")
-        reader(stepMesh).read(fr"{savePath}/final_mat.csv")
+        reader(stepMesh,error_thereshold).read(fr"{savePath}/final_mat.csv")
         stepMesh=calFemValue(stepMesh)
         #calculate the srp for the steper mesh
         print(f"info    : calculating {step} mesh srp value")
@@ -233,7 +234,7 @@ if __name__ == "__main__":
         stepNodes = JarOfNodes()
         stepGussianPoints = JarOfGussianPoint()
         stepMesh = Mesh(stepNodes,stepGussianPoints,stepElements)
-        reader(stepMesh).read(new_mesh)
+        reader(stepMesh,error_thereshold).read(new_mesh)
         #tranfer data from step mesh to new mesh
         print(f"info    : transfering {step} mesh data to {step+1} mesh")
 
@@ -270,7 +271,7 @@ if __name__ == "__main__":
         #write the step mesh srp value
         print(f"info    : writing {step+1} mesh srp value")
         Write_csvfile(stepMesh,savePath)
-    reader(stepMesh).read(fr"{savePath}/final_mat.csv")
+    reader(stepMesh,error_thereshold).read(fr"{savePath}/final_mat.csv")
     stepMesh=calFemValue(stepMesh)
     #calculate the srp for the steper mesh
     print(f"info    : calculating {step+1} mesh srp value")

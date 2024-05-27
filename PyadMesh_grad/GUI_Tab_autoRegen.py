@@ -16,6 +16,7 @@ def Tab_autoRegen(third_layout):
     global MAX_ITER
     global plotType
     global meshAlgorithm,meshAlgo
+    global error_thereshold
     
     CSV_FIILE = ""
     INP_FILE = ""
@@ -28,6 +29,7 @@ def Tab_autoRegen(third_layout):
     plotType=""
     meshAlgorithm=""
     meshAlgo=0
+    error_thereshold=0.001
     ##create layout for input csv file
     input_layout1 = QHBoxLayout()
     input_layout1.setSpacing(20)
@@ -159,12 +161,12 @@ def Tab_autoRegen(third_layout):
     input_layout4.addWidget(radio_button2)
     input_layout4.addWidget(radio_button3)
     
-    ### maximun ERROR and maximun iteration
+    ### maximun iteration
     input_layout5 = QHBoxLayout()
     input_layout5.setSpacing(20)
     input_layout5.setContentsMargins(10, 10, 10, 10)
     third_layout.addLayout(input_layout5)
-    ### Create label maximun ERROR
+
 
 
     ### Create label maximun iteration
@@ -234,6 +236,29 @@ def Tab_autoRegen(third_layout):
     input_layout7.addWidget(choose_meshAlgorithm)
     input_layout7.addStretch(1)
     
+    ### Create label  ERROR threashold
+    
+    input_layout8 = QHBoxLayout()
+    input_layout8.setSpacing(20)
+    input_layout8.setContentsMargins(10, 10, 10, 10)
+    third_layout.addLayout(input_layout8)
+
+
+
+    ### Create label ERROR threshold
+    label_error_threshold = QLabel("Error threshold:")
+
+    ### Create line edit
+    lineEdit_error_threshold = QLineEdit()
+    lineEdit_error_threshold.textChanged.connect(lambda: write_text(lineEdit_error_threshold.text(), "error_thereshold"))
+    ### Add widget to layout
+ 
+    input_layout8.addWidget(label_error_threshold)
+    input_layout8.addWidget(lineEdit_error_threshold)
+    
+    ###add space
+    input_layout8.addStretch(1)
+    
     
     
     
@@ -252,7 +277,7 @@ def Tab_autoRegen(third_layout):
     
     def write_text(text,var):
         
-        global CSV_FIILE, INP_FILE, IGS_FILE,SAVE_FILE, PROCOCESS, scalefactor,MAX_ITER,DISP_FILE,plotType,meshAlgorithm
+        global CSV_FIILE, INP_FILE, IGS_FILE,SAVE_FILE, PROCOCESS, scalefactor,MAX_ITER,DISP_FILE,plotType,meshAlgorithm,error_thereshold
         
         if var=="CSV_FIILE":
             CSV_FIILE = text
@@ -272,9 +297,11 @@ def Tab_autoRegen(third_layout):
             scalefactor = text
         elif var=="plotType":
             plotType = text
-        elif meshAlgorithm=="meshAlgorithm":
+        elif var=="meshAlgorithm":
             meshAlgorithm = text
-            print(meshAlgorithm)
+        elif var=="error_thereshold":
+            error_thereshold=text
+            
 
     
     def browse_csv_file():
@@ -364,11 +391,11 @@ def Tab_autoRegen(third_layout):
                 meshAlgo=11
         
             if PROCOCESS == "CPU":
-                os.system(f"python main_CPU_auto_generateMesh.py {CSV_FIILE} {INP_FILE} {IGS_FILE} {SAVE_FILE} {MAX_ITER} {scalefactor} {DISP_FILE} {plotType} {meshAlgo}")
+                os.system(f"python main_CPU_auto_generateMesh.py {CSV_FIILE} {INP_FILE} {IGS_FILE} {SAVE_FILE} {MAX_ITER} {scalefactor} {DISP_FILE} {plotType} {meshAlgo} {error_thereshold}")
             if PROCOCESS == "GPU":
-                os.system(f"python main_GPU_auto_generateMesh.py {CSV_FIILE} {INP_FILE} {IGS_FILE} {SAVE_FILE} {MAX_ITER} {scalefactor} {DISP_FILE} {plotType} {meshAlgo}")
+                os.system(f"python main_GPU_auto_generateMesh.py {CSV_FIILE} {INP_FILE} {IGS_FILE} {SAVE_FILE} {MAX_ITER} {scalefactor} {DISP_FILE} {plotType} {meshAlgo} {error_thereshold}")
             if PROCOCESS == "parallelCPU":
-                os.system(f"python main_CPU_parallel_auto_generateMesh.py {CSV_FIILE} {INP_FILE} {IGS_FILE} {SAVE_FILE} {MAX_ITER} {scalefactor} {DISP_FILE} {plotType} {meshAlgo}")
+                os.system(f"python main_CPU_parallel_auto_generateMesh.py {CSV_FIILE} {INP_FILE} {IGS_FILE} {SAVE_FILE} {MAX_ITER} {scalefactor} {DISP_FILE} {plotType} {meshAlgo} {error_thereshold}")
 
 
 

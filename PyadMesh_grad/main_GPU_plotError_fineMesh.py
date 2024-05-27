@@ -20,7 +20,7 @@ from Write_csvfileError import Write_csvfileError
 import re_iding
 import time
 
-def Plot_Error(csvFile,inpFile,savePath,inpFile_fineMesh,csvFile_fineMesh):
+def Plot_Error(csvFile,inpFile,savePath,inpFile_fineMesh,csvFile_fineMesh,error_thereshold):
     """ this function plot error of mesh
     Args:
         csvFile (str): csv file path
@@ -37,8 +37,8 @@ def Plot_Error(csvFile,inpFile,savePath,inpFile_fineMesh,csvFile_fineMesh):
     fine_Elements = JarOfElement()
     fineMesh = Mesh(fine_Nodes,fine_GussianPoints,fine_Elements)
 
-    reader(fineMesh).read(inpFile_fineMesh)
-    reader(fineMesh).read(csvFile_fineMesh)
+    reader(fineMesh,error_thereshold).read(inpFile_fineMesh)
+    reader(fineMesh,error_thereshold).read(csvFile_fineMesh)
     re_iding.rename(fineMesh)
     firstMesh=calFemValue(fineMesh)
     #read coarse mesh
@@ -48,8 +48,8 @@ def Plot_Error(csvFile,inpFile,savePath,inpFile_fineMesh,csvFile_fineMesh):
     coarse_Elements = JarOfElement()
     coarseMesh = Mesh(coarse_Nodes,coarse_GussianPoints,coarse_Elements)
     
-    reader(coarseMesh).read(inpFile)
-    reader(coarseMesh).read(csvFile)
+    reader(coarseMesh,error_thereshold).read(inpFile)
+    reader(coarseMesh,error_thereshold).read(csvFile)
     re_iding.rename(coarseMesh)
     
     #tranfer data from first mesh to step mesh
@@ -74,7 +74,8 @@ if __name__ == "__main__":
     savePath=sys.argv[3]
     inpFile_fineMesh=sys.argv[4]
     csvFile_fineMesh=sys.argv[5]
-    Plot_Error(csvFile,inpFile,savePath,inpFile_fineMesh,csvFile_fineMesh)
+    error_thereshold=float(sys.argv[6])
+    Plot_Error(csvFile,inpFile,savePath,inpFile_fineMesh,csvFile_fineMesh,error_thereshold)
     time_end = time.time()
     print(f"info    : total time {time_end-time_start}")
     print("####################done####################")

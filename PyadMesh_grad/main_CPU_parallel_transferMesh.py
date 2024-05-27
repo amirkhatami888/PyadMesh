@@ -42,7 +42,7 @@ if __name__ == "__main__":
     datFile=sys.argv[3]
     savePath=sys.argv[4]
     core=sys.argv[5]
-
+    error_thereshold=float(sys.argv[6])
     
     warnings.simplefilter('ignore', category=NumbaPerformanceWarning)
 
@@ -54,8 +54,8 @@ if __name__ == "__main__":
     first_Elements = JarOfElement()
     firstMesh = Mesh(first_Nodes,first_GussianPoints,first_Elements)
 
-    reader(firstMesh).read(inpFile)
-    reader(firstMesh).read(csvFile)
+    reader(firstMesh,error_thereshold).read(inpFile)
+    reader(firstMesh,error_thereshold).read(csvFile)
     re_iding.rename(firstMesh)
 
     firstMesh=calFemValue(firstMesh)
@@ -68,7 +68,7 @@ if __name__ == "__main__":
     second_Nodes = JarOfNodes()
     second_GussianPoints = JarOfGussianPoint()
     secondMesh = Mesh(second_Nodes,second_GussianPoints,second_Elements)
-    reader(secondMesh).read(datFile)
+    reader(secondMesh,error_thereshold).read(datFile)
     re_iding.rename(secondMesh)
     
     #tranfer data from first mesh to step mesh

@@ -5,14 +5,14 @@ import os
 def Tab_plotError_fineMesh(fourth_layout):
         """ this function create the fourth tab in the GUI
         """
-        global CSV_FIILE, INP_FILE, SAVE_FILE, PROCOCESS,INP_FILE_2,CSV_FIILE_2
+        global CSV_FIILE, INP_FILE, SAVE_FILE, PROCOCESS,INP_FILE_2,CSV_FIILE_2,error_thereshold
         CSV_FIILE = ""
         INP_FILE = ""
         SAVE_FILE = ""
         PROCOCESS = ""
         INP_FILE_2= ""
         CSV_FIILE_2= ""
-
+        error_thereshold=0.001
         ##create layout for input csv file
         input_layout1 = QHBoxLayout()
         input_layout1.setSpacing(20)
@@ -156,6 +156,31 @@ def Tab_plotError_fineMesh(fourth_layout):
 
 
 
+        ### Create label  ERROR threashold
+        
+        input_layout5 = QHBoxLayout()
+        input_layout5.setSpacing(20)
+        input_layout5.setContentsMargins(10, 10, 10, 10)
+        fourth_layout.addLayout(input_layout5)
+
+
+
+        ### Create label ERROR threshold
+        label_error_threshold = QLabel("Error threshold:")
+
+        ### Create line edit
+        lineEdit_error_threshold = QLineEdit()
+        lineEdit_error_threshold.textChanged.connect(lambda: write_text(lineEdit_error_threshold.text(), "error_thereshold"))
+        ### Add widget to layout
+        
+        input_layout5.addWidget(label_error_threshold)
+        input_layout5.addWidget(lineEdit_error_threshold)
+        
+        ###add space
+        input_layout5.addStretch(1)
+
+
+
         ##space empty
         fourth_layout.addStretch(1)
         ##create run button
@@ -187,6 +212,8 @@ def Tab_plotError_fineMesh(fourth_layout):
                         INP_FILE_2 = text
                 elif var == "CSV_FIILE_2":
                         CSV_FIILE_2 = text
+                elif var=="error_thereshold":
+                        error_thereshold=text
         def browse_csv_file():
                 FILE,check=QFileDialog.getOpenFileName(None,"Open CSV File", "","CSV Files (*.csv)")
                 if check:
@@ -235,12 +262,12 @@ def Tab_plotError_fineMesh(fourth_layout):
                        QMessageBox.about(None,"Error","please select type of CSV_FIILE_2")
                 else:
                         if PROCOCESS=="CPU":
-                                os.system(f"python main_CPU_plotError_fineMesh.py {CSV_FIILE} {INP_FILE} {SAVE_FILE} {INP_FILE_2} {CSV_FIILE_2}")
-                                print(f"python main_CPU_plotError_fineMesh.py {CSV_FIILE} {INP_FILE} {SAVE_FILE} {INP_FILE_2} {CSV_FIILE_2}")
+                                os.system(f"python main_CPU_plotError_fineMesh.py {CSV_FIILE} {INP_FILE} {SAVE_FILE} {INP_FILE_2} {CSV_FIILE_2} {error_thereshold}")
+                                print(f"python main_CPU_plotError_fineMesh.py {CSV_FIILE} {INP_FILE} {SAVE_FILE} {INP_FILE_2} {CSV_FIILE_2} {error_thereshold}")
 
                         elif PROCOCESS=="GPU":
-                                os.system(f"python main_GPU_plotError_fineMesh.py {CSV_FIILE} {INP_FILE} {SAVE_FILE} {INP_FILE_2} {CSV_FIILE_2}")
-                                print(f"python main_GPU_plotError_fineMesh.py {CSV_FIILE} {INP_FILE} {SAVE_FILE} {INP_FILE_2} {CSV_FIILE_2}")
+                                os.system(f"python main_GPU_plotError_fineMesh.py {CSV_FIILE} {INP_FILE} {SAVE_FILE} {INP_FILE_2} {CSV_FIILE_2} {error_thereshold}")
+                                print(f"python main_GPU_plotError_fineMesh.py {CSV_FIILE} {INP_FILE} {SAVE_FILE} {INP_FILE_2} {CSV_FIILE_2} {error_thereshold}")
 
 
                 

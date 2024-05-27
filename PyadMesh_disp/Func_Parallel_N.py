@@ -72,9 +72,9 @@ def calculator_N(point_x,point_y,x_a,y_a,x_b,y_b,x_c,y_c,N):
     """
     i = cuda.grid(1)
     if i < len(point_x):
-        N[i,1]=calculator_N1(x_a[i],y_a[i],x_b[i],y_b[i],x_c[i],y_c[i],point_x[i],point_y[i])
-        N[i,2]=calculator_N2(x_a[i],y_a[i],x_b[i],y_b[i],x_c[i],y_c[i],point_x[i],point_y[i])
-        N[i,3]=calculator_N3(x_a[i],y_a[i],x_b[i],y_b[i],x_c[i],y_c[i],point_x[i],point_y[i])
+        N[i,0]=calculator_N1(x_a[i],y_a[i],x_b[i],y_b[i],x_c[i],y_c[i],point_x[i],point_y[i])
+        N[i,1]=calculator_N2(x_a[i],y_a[i],x_b[i],y_b[i],x_c[i],y_c[i],point_x[i],point_y[i])
+        N[i,2]=calculator_N3(x_a[i],y_a[i],x_b[i],y_b[i],x_c[i],y_c[i],point_x[i],point_y[i])
 
 
 
@@ -106,4 +106,43 @@ def mul_calculator_N(points, Elements,thread_x=32,thread_y=32):
 
     return d_N
 
+
+#test
+
+def validation(point,element):
+    x=point[0]
+    y=point[1]
+    x1=element[1]
+    y1=element[2]
+    x2=element[3]
+    y2=element[4]
+    x3=element[5]
+    y3=element[6]
+    area=np.linalg.det(np.array([[1,x1,y1],[1,x2,y2],[1,x3,y3]],dtype=np.float64))
+    N1=np.float64(np.linalg.det(np.array([[1,x,y],[1,x2,y2],[1,x3,y3]],dtype=np.float64))/area)
+    N2=np.float64(np.linalg.det(np.array([[1,x1,y1],[1,x,y],[1,x3,y3]],dtype=np.float64))/area)
+    N3=np.float64(np.linalg.det(np.array([[1,x1,y1],[1,x2,y2],[1,x,y]],dtype=np.float64))/area)
+    return [N1,N2,N3]
+
+
+def wr(point,element):
+    x_A=point[0]
+    y_A=point[1]
+    x1=element[1]
+    y1=element[2]
+    x2=element[3]
+    y2=element[4]
+    x3=element[5]
+    y3=element[6]
+    N1=(x2*y3-y2*x3-x_A*y3+x_A*y2+y_A*x3-y_A*x2)/(x2*y3-y2*x3-x1*y3+x1*y2+y1*x3-y1*x2)
+    N2=(x_A*y3-y_A*x3-x1*y3+x1*y_A+y1*x3-y1*x_A)/(x2*y3-y2*x3-x1*y3+x1*y2+y1*x3-y1*x2)
+    N3=(x2*y_A-y2*x_A-x1*y_A+x1*y2+y1*x_A-y1*x2)/(x2*y3-y2*x3-x1*y3+x1*y2+y1*x3-y1*x2)
+    return [N1,N2,N3]
+    
+point = np.array([0.1,0.1],dtype=np.float64)
+element = np.array([1,0,0,1,0,0,1],dtype=np.float64)
+N=mul_calculator_N(np.array([point]),np.array([element]))
+print(N.copy_to_host())
+print(validation(point,element))
+print(wr(point,element))
 

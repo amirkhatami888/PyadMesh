@@ -5,7 +5,7 @@ import os
 def Tab_wholeMesh(second_layout):
     """ this function create the second tab in the GUI
     """
-    global CSV_FIILE, INP_FILE, DAT_FILE, SAVE_FILE, PROCOCESS, THREAD_X, THREAD_Y, CORE
+    global CSV_FIILE, INP_FILE, DAT_FILE, SAVE_FILE, PROCOCESS, THREAD_X, THREAD_Y, CORE,error_thereshold
     CSV_FIILE = ""
     INP_FILE = ""
     DAT_FILE = ""
@@ -14,6 +14,7 @@ def Tab_wholeMesh(second_layout):
     THREAD_X = 0
     THREAD_Y = 0
     CORE = 0
+    error_thereshold=0.001
     ##create layout for input csv file
     input_layout1 = QHBoxLayout()
     input_layout1.setSpacing(20)
@@ -199,7 +200,40 @@ def Tab_wholeMesh(second_layout):
     
     input_layout7.addStretch(2)
     
+
+    
+    
+    
+    
+    ### Create label  ERROR threashold
+    
+    input_layout8 = QHBoxLayout()
+    input_layout8.setSpacing(20)
+    input_layout8.setContentsMargins(10, 10, 10, 10)
+    second_layout.addLayout(input_layout8)
+
+
+
+    ### Create label ERROR threshold
+    label_error_threshold = QLabel("Error threshold:")
+
+    ### Create line edit
+    lineEdit_error_threshold = QLineEdit()
+    lineEdit_error_threshold.textChanged.connect(lambda: write_text(lineEdit_error_threshold.text(), "error_thereshold"))
+    ### Add widget to layout
+ 
+    input_layout8.addWidget(label_error_threshold)
+    input_layout8.addWidget(lineEdit_error_threshold)
+    
+    ###add space
+    input_layout8.addStretch(1)
+    
+    
+    
+    
+    
     second_layout.addStretch(2)
+    
     ##create run button
     run_button = QPushButton("Run")
     run_button.setFixedHeight(50)
@@ -262,7 +296,9 @@ def Tab_wholeMesh(second_layout):
             THREAD_Y = text
         elif var == "CORE":
             CORE = text
-    
+        elif var=="error_thereshold":
+            error_thereshold=text
+            
     def browse_csv_file():
         FILE,check=QFileDialog.getOpenFileName(None,"Open CSV File", "","CSV Files (*.csv)")
         if check:
@@ -306,20 +342,20 @@ def Tab_wholeMesh(second_layout):
             QMessageBox.about(None, "Error", "Please select process type")
         else:
             if PROCOCESS=="serialCPU":
-                os.system(f"python main_CPU_transferMesh.py {CSV_FIILE} {INP_FILE} {DAT_FILE} {SAVE_FILE} ")
+                os.system(f"python main_CPU_transferMesh.py {CSV_FIILE} {INP_FILE} {DAT_FILE} {SAVE_FILE} {error_thereshold}")
             elif PROCOCESS=="GPU":
                 if THREAD_X ==0 or not THREAD_X.isnumeric():
                     QMessageBox.about(None, "Error", "Please enter valid number of thread x")
                 elif THREAD_Y ==0 or not THREAD_Y.isnumeric():
                     QMessageBox.about(None, "Error", "Please enter valid number of thread y")
                 else:
-                    os.system(f"python main_GPU_transferMesh.py {CSV_FIILE} {INP_FILE} {DAT_FILE} {SAVE_FILE} {THREAD_X} {THREAD_Y}")
+                    os.system(f"python main_GPU_transferMesh.py {CSV_FIILE} {INP_FILE} {DAT_FILE} {SAVE_FILE} {THREAD_X} {THREAD_Y} {error_thereshold}")
 
             elif PROCOCESS=="parallelCPU":
                 if  CORE ==0 or not CORE.isnumeric():
                     QMessageBox.about(None, "Error", "Please enter valid number of core")
                 else :
-                    os.system(f"python main_CPU_parallel_transferMesh.py {CSV_FIILE} {INP_FILE} {DAT_FILE} {SAVE_FILE} {CORE}")
+                    os.system(f"python main_CPU_parallel_transferMesh.py {CSV_FIILE} {INP_FILE} {DAT_FILE} {SAVE_FILE} {CORE} {error_thereshold}")
             elif PROCOCESS=="CPUGPU":
                 if  THREAD_X ==0 or not THREAD_X.isnumeric():
                     QMessageBox.about(None, "Error", "Please enter valid number of thread x")
@@ -328,7 +364,7 @@ def Tab_wholeMesh(second_layout):
                 elif CORE ==0 or not CORE.isnumeric():
                     QMessageBox.about(None, "Error", "Please enter valid number of core")
                 else :
-                    os.system(f"python main_GPU_parallel_transferMesh.py {CSV_FIILE} {INP_FILE} {DAT_FILE} {SAVE_FILE} {THREAD_X} {THREAD_Y} {CORE}")
+                    os.system(f"python main_GPU_parallel_transferMesh.py {CSV_FIILE} {INP_FILE} {DAT_FILE} {SAVE_FILE} {THREAD_X} {THREAD_Y} {CORE} {error_thereshold}")
                 
 
 

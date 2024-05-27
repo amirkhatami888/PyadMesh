@@ -5,11 +5,12 @@ import os
 def Tab_plotError(fourth_layout):
         """ this function create the fourth tab in the GUI
         """
-        global CSV_FIILE, INP_FILE, SAVE_FILE, PROCOCESS
+        global CSV_FIILE, INP_FILE, SAVE_FILE, PROCOCESS,error_thereshold
         CSV_FIILE = ""
         INP_FILE = ""
         SAVE_FILE = ""
         PROCOCESS = ""
+        error_thereshold=0.001
 
 
         ##create layout for input csv file
@@ -105,6 +106,34 @@ def Tab_plotError(fourth_layout):
 
 
 
+        ### Create label  ERROR threashold
+        
+        input_layout5 = QHBoxLayout()
+        input_layout5.setSpacing(20)
+        input_layout5.setContentsMargins(10, 10, 10, 10)
+        fourth_layout.addLayout(input_layout5)
+
+
+
+        ### Create label ERROR threshold
+        label_error_threshold = QLabel("Error threshold:")
+
+        ### Create line edit
+        lineEdit_error_threshold = QLineEdit()
+        lineEdit_error_threshold.textChanged.connect(lambda: write_text(lineEdit_error_threshold.text(), "error_thereshold"))
+        ### Add widget to layout
+        
+        input_layout5.addWidget(label_error_threshold)
+        input_layout5.addWidget(lineEdit_error_threshold)
+        
+        ###add space
+        input_layout5.addStretch(1)
+
+
+
+
+
+
         ##space empty
         fourth_layout.addStretch(1)
         ##create run button
@@ -132,6 +161,8 @@ def Tab_plotError(fourth_layout):
                         SAVE_FILE = text
                 elif var == "PROCOCESS":
                         PROCOCESS = text
+                elif var=="error_thereshold":
+                        error_thereshold=text
         def browse_csv_file():
                 FILE,check=QFileDialog.getOpenFileName(None,"Open CSV File", "","CSV Files (*.csv)")
                 if check:
@@ -166,10 +197,10 @@ def Tab_plotError(fourth_layout):
                        QMessageBox.about(None,"Error","please select type of processor")
                 else:
                         if PROCOCESS=="CPU":
-                                os.system(f"python main_CPU_plotError.py {CSV_FIILE} {INP_FILE} {SAVE_FILE}")
+                                os.system(f"python main_CPU_plotError.py {CSV_FIILE} {INP_FILE} {SAVE_FILE} {error_thereshold}")
 
                         elif PROCOCESS=="GPU":
-                                os.system(f"python main_GPU_plotError.py {CSV_FIILE} {INP_FILE} {SAVE_FILE}")
+                                os.system(f"python main_GPU_plotError.py {CSV_FIILE} {INP_FILE} {SAVE_FILE} {error_thereshold}")
 
 
                 

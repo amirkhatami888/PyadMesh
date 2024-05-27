@@ -34,7 +34,7 @@ from plot_Gradient import plotMESH
 import time
 
 
-def tranferMesh(csvFile,inpFile,datFile,savePath,thread_x,thread_y):
+def tranferMesh(csvFile,inpFile,datFile,savePath,thread_x,thread_y,error_thereshold):
     """this function tranfer information of mesh
     Args:
         csvFile (str): csv file path
@@ -54,8 +54,8 @@ def tranferMesh(csvFile,inpFile,datFile,savePath,thread_x,thread_y):
     first_Elements = JarOfElement()
     firstMesh = Mesh(first_Nodes,first_GussianPoints,first_Elements)
 
-    reader(firstMesh).read(inpFile)
-    reader(firstMesh).read(csvFile)
+    reader(firstMesh,error_thereshold).read(inpFile)
+    reader(firstMesh,error_thereshold).read(csvFile)
 
     firstMesh=calFemValue(firstMesh)
 
@@ -67,7 +67,7 @@ def tranferMesh(csvFile,inpFile,datFile,savePath,thread_x,thread_y):
     second_Nodes = JarOfNodes()
     second_GussianPoints = JarOfGussianPoint()
     secondMesh = Mesh(second_Nodes,second_GussianPoints,second_Elements)
-    reader(secondMesh).read(datFile)
+    reader(secondMesh,error_thereshold).read(datFile)
     
     re_iding.rename(secondMesh)
     #tranfer data from first mesh to step mesh
@@ -98,8 +98,8 @@ if __name__ == "__main__":
     savePath=sys.argv[4]
     thread_x=sys.argv[5]
     thread_y=sys.argv[6]
-
+    error_thereshold=float(sys.argv[7])
     
-    tranferMesh(csvFile,inpFile,datFile,savePath,thread_x,thread_y)
+    tranferMesh(csvFile,inpFile,datFile,savePath,thread_x,thread_y,error_thereshold)
     print(f"info    : done in {time.time()-time_start} sec")
 print("####################done####################")

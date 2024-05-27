@@ -27,7 +27,7 @@ class GmeshDAT:
                     self.mesh.JarOfNodes.addNode( Node(id,x,y))
                     del(id,x,y)
             reader.close()
-    def readElement(self):
+    def readElement(self,relative_error_thereshold=0.001):
             """function to read the dat file from gmesh
             """
             reader = open(self.path  , 'r')
@@ -45,7 +45,7 @@ class GmeshDAT:
                     n3=self.mesh.JarOfNodes.GiveNodeWithID(n3_id)
                     
                     
-                    self.mesh.JarOfElement.addElement( Element(id,n1,n2,n3))
+                    self.mesh.JarOfElement.addElement( Element(id,n1,n2,n3,relative_error_thereshold))
                     del(id,n1,n2,n3,n1_id,n2_id,n3_id)
             reader.close()
             

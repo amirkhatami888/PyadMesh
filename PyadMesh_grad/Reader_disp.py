@@ -3,7 +3,6 @@
 #importing libraries
 import os
 import math
-from DataStructure_Element_Triangle_order1 import Triangle_order1 as Element
 from DataStructure_Point_Node import NodePoint as Node
 from DataStructure_Point_Gaussian import GaussianPoint as GaussianPoint
 

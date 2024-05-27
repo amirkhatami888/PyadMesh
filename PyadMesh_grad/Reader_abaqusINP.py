@@ -49,7 +49,7 @@ class abaqusINP:
             
         reader.close()
         
-    def readElement(self):
+    def readElement(self,relative_error_thereshold=0.001):
         """function to read the inp file from abaqus
         """
         
@@ -80,7 +80,7 @@ class abaqusINP:
             n3_id=int(i.split(',')[3])
             n3=self.mesh.JarOfNodes.GiveNodeWithID(n3_id)
             
-            self.mesh.JarOfElement.addElement( Element(id,n1,n2,n3))
+            self.mesh.JarOfElement.addElement( Element(id,n1,n2,n3,relative_error_thereshold))
             del(id,n1,n2,n3,n1_id,n2_id,n3_id)
             
         reader.close()

@@ -107,7 +107,6 @@ if __name__ == "__main__":
     MAX_ITER=int(sys.argv[4])
     scalefactor=float(sys.argv[5])
     dispFile=sys.argv[6]
-    
     auto_generateMesh(INP_FILE,IGS_FILE,SAVE_FILE,MAX_ITER,scalefactor,dispFile)
     time_end = time.time()
     print(f"info    : total time is {time_end-time_start}")

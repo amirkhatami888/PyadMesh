@@ -14,6 +14,7 @@ def Tab_Mesh_generatorRefiner(sixth_layout):
     global PROCOCESS
     global scalefactor
     global MAX_ITER
+
     CSV_FIILE = ""
     INP_FILE = ""
     IGS_FILE = ""
@@ -243,7 +244,7 @@ def Tab_Mesh_generatorRefiner(sixth_layout):
             return False                
     def run():
 
-
+        
         if INP_FILE == ""or not INP_FILE.endswith(".inp")or not os.path.isfile(INP_FILE):
             QMessageBox.about(None,"Error","please select inp file correctlly")
         elif IGS_FILE == ""or not IGS_FILE.endswith(".igs")or not os.path.isfile(IGS_FILE):

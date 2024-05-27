@@ -15,7 +15,7 @@ class Triangle_order1:
         GaussianPoint_coordinate: coordinate of the Gaussian point
         GaussianPoints: list of Gaussian points
     """
-    def __init__(self,id,n1,n2,n3):
+    def __init__(self,id,n1,n2,n3,relative_error_thereshold=0.001):
         """
         The constructor for Triangle_order1 class.
         args:
@@ -56,7 +56,11 @@ class Triangle_order1:
         self.fem_value = None
         self.nodes=[n1,n2,n3]
         self._GSH = None
-        
+
+        self.relative_error_thereshold=relative_error_thereshold
+    
+
+         
     @property
     def Error_pure(self):
         """this property is used to return the absoulote error of the element
@@ -70,10 +74,8 @@ class Triangle_order1:
         Returns:
             float: the error of the element
         """
-        error_thereshold =0.001
-
         e=abs(self.fem_value-self.srp_value)/abs(self.srp_value)
-        if abs(self.srp_value-self.fem_value) < error_thereshold:
+        if abs(self.srp_value-self.fem_value) < self.relative_error_thereshold:
             return 0
 
         return e
@@ -184,6 +186,16 @@ class Triangle_order1:
             list: the coordinates of the nodes of the element in a matrix form
         """
         return [self.n1.Give_x(), self.n1.Give_y(), self.n2.Give_x(), self.n2.Give_y(), self.n3.Give_x(), self.n3.Give_y()]
+
+    def ToMatrix_CoordinatesWithIDs(self):
+        """this function is used to return the coordinates of the nodes of the element in a matrix form
+
+        Returns:
+            list: the coordinates of the nodes of the element in a matrix form
+        """
+        return [self.id,self.n1.Give_x(), self.n1.Give_y(), self.n2.Give_x(), self.n2.Give_y(), self.n3.Give_x(), self.n3.Give_y()]
+
+
 
     def Give_Coordinates(self):
         """this function is used to return the coordinates of the nodes of the element in a list form
