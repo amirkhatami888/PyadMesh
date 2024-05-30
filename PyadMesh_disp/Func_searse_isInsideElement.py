@@ -3,10 +3,6 @@
 import numpy as np
 import math
 
-
-
-
-
 def checker(x_a,y_a,x_b,y_b,x_c,y_c,O_x,O_y):
     """this function is used to check if the point is inside the triangle or not
     Args:
@@ -31,10 +27,6 @@ def checker(x_a,y_a,x_b,y_b,x_c,y_c,O_x,O_y):
         return 1
     else:
         return -1
-        
-        
-
-
 
 def kernel_check_PointIsInsideElements(point,ElementsMatrixWithCoordinates):
     """this function is used to check if the point is inside the triangle or not
@@ -53,7 +45,6 @@ def kernel_check_PointIsInsideElements(point,ElementsMatrixWithCoordinates):
     element_n3_ys = np.array  (ElementsMatrixWithCoordinates[:,6].flatten(), dtype=np.float64)
     point_x       = float(point[0])
     point_y       = float(point[1])
-    
     for i in range(len(element_n1_xs)):
         ans[i]=checker(element_n1_xs[i],element_n1_ys[i],element_n2_xs[i],element_n2_ys[i],element_n3_xs[i],element_n3_ys[i],point_x,point_y)
     

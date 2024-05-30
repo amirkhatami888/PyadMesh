@@ -1,3 +1,7 @@
+# author: amirhossein khatami
+# mail: amirkhatami@gmail.com
+
+# importing libraries
 import numpy as np
 import math
 import numba as nb
@@ -5,18 +9,20 @@ from numba import cuda
 
 @cuda.jit('int32(float64,float64,float64,float64,float64,float64,float64,float64)',device=True)
 def checker(x_a,y_a,x_b,y_b,x_c,y_c,O_x,O_y):
-    """this function is used to check if the point is inside the triangle or not
+    """Check if the point is inside the triangle or not.
+
     Args:
-        x_a (float): x of point first vertex
-        y_a (float): y of point first vertex
-        x_b (float): x of point second vertex
-        y_b (float): y of point second vertex
-        x_c (float): x of point third vertex
-        y_c (float): y of point third vertex
-        O_x (float): x of point O
-        O_y (float): y of point O
+        x_a (float): x-coordinate of the first vertex of the triangle.
+        y_a (float): y-coordinate of the first vertex of the triangle.
+        x_b (float): x-coordinate of the second vertex of the triangle.
+        y_b (float): y-coordinate of the second vertex of the triangle.
+        x_c (float): x-coordinate of the third vertex of the triangle.
+        y_c (float): y-coordinate of the third vertex of the triangle.
+        O_x (float): x-coordinate of the point to be checked.
+        O_y (float): y-coordinate of the point to be checked.
+
     Returns:
-        int: 1 if the point is inside the triangle and -1 if the point is outside the triangle
+        int: 1 if the point is inside the triangle, -1 if the point is outside.
     """
     telerance=1e-12
     if ((x_b-x_a)*(O_y-y_a)-(y_b-y_a)*(O_x-x_a) <= telerance and
@@ -29,22 +35,20 @@ def checker(x_a,y_a,x_b,y_b,x_c,y_c,O_x,O_y):
     else:
         return -1
         
-
-
-
 @cuda.jit('void(float64[:],float64[:],float64[:],float64[:],float64[:],float64[:],float64[:],float64[:],int32[:,:])')
 def mul_check_PointIsInsideTriangles(point_x, point_y, x_a, y_a, x_b, y_b, x_c, y_c, ans):
-    """this function is used to check if the point is inside the triangle or not
+    """Check if the points are inside the triangles.
+
     Args:
-        point_x (numpy array float64): x of point O
-        point_y (numpy array float64): y of point O
-        x_a (numpy array float64): x of point first vertex
-        y_a (numpy array float64): y of point first vertex
-        x_b (numpy array float64): x of point second vertex
-        y_b (numpy array float64): y of point second vertex
-        x_c (numpy array float64): x of point third vertex
-        y_c (numpy array float64): y of point third vertex
-        ans (numpy array int32): 1 if the point is inside the triangle and -1 if the point is outside the triangle
+        point_x (numpy array float64): x-coordinates of points.
+        point_y (numpy array float64): y-coordinates of points.
+        x_a (numpy array float64): x-coordinates of the first vertex of triangles.
+        y_a (numpy array float64): y-coordinates of the first vertex of triangles.
+        x_b (numpy array float64): x-coordinates of the second vertex of triangles.
+        y_b (numpy array float64): y-coordinates of the second vertex of triangles.
+        x_c (numpy array float64): x-coordinates of the third vertex of triangles.
+        y_c (numpy array float64): y-coordinates of the third vertex of triangles.
+        ans (numpy array int32): Array to store the result: 1 for inside, -1 for outside.
     """
     i, j = cuda.grid(2)
     if i < ans.shape[0] and j < ans.shape[1]:
@@ -52,18 +56,18 @@ def mul_check_PointIsInsideTriangles(point_x, point_y, x_a, y_a, x_b, y_b, x_c, 
 
 @cuda.jit('void(float64,float64,float64[:],float64[:],float64[:],float64[:],float64[:],float64[:],int32[:])')
 def one_check_PointIsInsideTriangles(point_x,point_y,x_a,y_a,x_b,y_b,x_c,y_c,ans):
-    """this function is used to check if the point is inside the triangle or not
+    """Check if a point is inside the triangles.
 
     Args:
-        point_x (float): x of point O
-        point_y (float): y of point O
-        x_a (numpy array float64): x of point first vertex
-        y_a (numpy array float64): y of point first vertex
-        x_b (numpy array float64): x of point second vertex
-        y_b (numpy array float64): y of point second vertex
-        x_c (numpy array float64): x of point third vertex
-        y_c (numpy array float64): y of point third vertex
-        ans (numpy array int32): 1 if the point is inside the triangle and -1 if the point is outside the triangle
+        point_x (float): x-coordinate of the point.
+        point_y (float): y-coordinate of the point.
+        x_a (numpy array float64): x-coordinates of the first vertex of triangles.
+        y_a (numpy array float64): y-coordinates of the first vertex of triangles.
+        x_b (numpy array float64): x-coordinates of the second vertex of triangles.
+        y_b (numpy array float64): y-coordinates of the second vertex of triangles.
+        x_c (numpy array float64): x-coordinates of the third vertex of triangles.
+        y_c (numpy array float64): y-coordinates of the third vertex of triangles.
+        ans (numpy array int32): Array to store the result: 1 for inside, -1 for outside.
     """
     i = cuda.grid(1)
     if i < len(x_a):
@@ -71,9 +75,11 @@ def one_check_PointIsInsideTriangles(point_x,point_y,x_a,y_a,x_b,y_b,x_c,y_c,ans
 
 def mul_kernel_check_PointIsInsideElements(points, ElementsMatrixWithCoordinates,thread_x=32,thread_y=32):
     """this function is used to check if the point is inside the triangle or not
+    
     Args:
         points (numpy array float64): x and y of point O
         ElementsMatrixWithCoordinates (numpy array float64): x and y of vertices of triangles
+    
     Returns:
         numpy array int32: 1 if the point is inside the triangle and -1 if the point is outside the triangle
     """
@@ -106,10 +112,6 @@ def mul_kernel_check_PointIsInsideElements(points, ElementsMatrixWithCoordinates
             li.append(None)
     
     return li
-
-
-
-
 
 def one_kernel_check_PointIsInsideElements(point,ElementsMatrixWithCoordinates,thread_x=32,thread_y=32):
     """this function is used to check if the point is inside the triangle or not

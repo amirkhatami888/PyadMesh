@@ -1,5 +1,6 @@
 # author: amirhossein khatami
 # mail: amirkhatami@gmail.com
+
 # importing libraries
 import numpy as np
 
@@ -16,7 +17,6 @@ def nearest_point(point, points):
         float: The x-coordinate of the nearest point.
     """
     def distance(point, points):
-        
         """
         Find the distance of the given point to the points in the list.
 
@@ -34,10 +34,11 @@ def nearest_point(point, points):
         return distances
 
     def find_nearest_point(distances):
-        """ this function find the nearest point to the given point
+        """Find the nearest point to the given point.
+
         Args:
             distances (list): The list of distances.
-        
+
         Returns:
             float: The x-coordinate of the nearest point.
         """

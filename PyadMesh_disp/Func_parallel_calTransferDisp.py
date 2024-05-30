@@ -1,3 +1,7 @@
+# author: amirhossein khatami
+# mail: amirkhatami@gmail.com
+
+# importing libraries
 import Func_parallel_isInsideElement_disp as isInsideElement
 import Func_Parallel_N as N_cal
 import Func_parallel_U_cal as U_cal
@@ -5,12 +9,14 @@ import numpy as np
 import Func_parallel_transferingdisp as transfering
 
 def calTransferDisplacement(firstMesh,secondMesh):
-    """ this function is used to calculate the transfer displacement from firstMesh to secondMesh
+    """Calculate the transfer displacement from firstMesh to secondMesh.
+
     Args:
-        firstMesh(Mesh): the first mesh
-        secondMesh(Mesh): the second mesh
+        firstMesh (Mesh): The first mesh.
+        secondMesh (Mesh): The second mesh.
+
     Returns:
-        Mesh: the second mesh with transfered displacement
+        Mesh: The second mesh with transferred displacement.
     """
     points=np.array(secondMesh.JarOfNodes.ToMatrix())
     Elements=firstMesh.JarOfElement.ToNumPyArrayWithCoordinates()
@@ -41,12 +47,15 @@ def calTransferDisplacement(firstMesh,secondMesh):
 
 
 def calTransferDisplacement_point(firstMesh,node_X,noxe_y):
-    """ this function is used to calculate the transfer displacement from firstMesh to secondMesh
+    """Calculate the transfer displacement from firstMesh to a specific point.
+
     Args:
-        firstMesh(Mesh): the first mesh
-        secondMesh(Mesh): the second mesh
+        firstMesh (Mesh): The first mesh.
+        node_X (float): The x-coordinate of the point.
+        node_y (float): The y-coordinate of the point.
+
     Returns:
-        Mesh: the second mesh with transfered displacement
+        tuple: The displacement (u1, u2) of the point.
     """
     point=[node_X,noxe_y]
     id_element_center=isInsideElement.one_kernel_check_PointIsInsideElements(point,firstMesh.GiveElementsNumpyArrayWithCoordinates())

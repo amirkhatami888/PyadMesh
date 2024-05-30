@@ -1,105 +1,113 @@
 # author: amirhossein khatami
 # mail: amirkhatami@gmail.com
+
 # importing libraries
 import math
 import numpy as np
 
 class GaussianPoint:
-    """this class is used to store all the gussian points in a list
-    attributes:
-        x: the x coordinate of the gussian point
-        y: the y coordinate of the gussian point
-        gradient: the gradient of the gussian point
-        element: the element that the gussian point belongs to
+    """This class is used to store all the Gaussian points.
+
+    Attributes:
+        x (float): The x coordinate of the Gaussian point.
+        y (float): The y coordinate of the Gaussian point.
+        gradient (float): The gradient of the Gaussian point.
+        element (Element): The element that the Gaussian point belongs to.
     """
     def __init__(self,  x, y, gradient):
-        """
-        the constructor for GaussianPoint class
-        """
+        """The constructor for GaussianPoint class."""
         self.x = x
         self.y = y
         self.element=None
         self.gradient=gradient 
         
     def set_gradient(self, gradient):
-        """this function is used to set the gradient of the gussian point
+        """Set the gradient of the Gaussian point.
+        
         Args:
-            gradient(float): the gradient of the gussian point
+            gradient (float): The gradient of the Gaussian point.
         """
         self.gradient = gradient
 
     def Give_x(self):
-        """this function is used to return the x coordinate of the gussian point
+        """Return the x coordinate of the Gaussian point.
+
         Returns:
-            float: the x coordinate of the gussian point
+            float: The x coordinate of the Gaussian point.
         """
         return self.x
     
     def Give_y(self):
-        """this function is used to return the y coordinate of the gussian point
+        """Return the y coordinate of the Gaussian point.
+
         Returns:
-            float: the y coordinate of the gussian point
+            float: The y coordinate of the Gaussian point.
         """
         return self.y
     
     def Give_gradient(self):
-        """this function is used to return the gradient of the gussian point
+        """Return the gradient of the Gaussian point.
+
         Returns:
-            float: the gradient of the gussian point
+            float: The gradient of the Gaussian point.
         """
         return self.gradient
     
     def  setElement(self, element):
-        """this function is used to set the element that the gussian point belongs to
+        """Set the element that the Gaussian point belongs to.
+        
         Args:
-            element(Element): the element that the gussian point belongs to
+            element (Element): The element that the Gaussian point belongs to.
         """
         self.element=element
     
     def distanceToCenter(self):
-        """this function is used to return the distance of the gussian point to the center of the element
+        """Return the distance of the Gaussian point to the center of the element.
+
         Returns:
-            float: the distance of the gussian point to the center of the element
+            float: The distance of the Gaussian point to the center of the element.
         """
         return math.sqrt(self.x ** 2 + self.y ** 2)
     
     def distanceToPoint(self, other):
-        """this function is used to return the distance of the gussian point to another gussian point
+        """Return the distance of the Gaussian point to another Gaussian point.
+
         Args:
-            other(GussianPoint): the other gussian point
+            other (GaussianPoint): The other Gaussian point.
+
         Returns:
-            float: the distance of the gussian point to the other gussian point
+            float: The distance of the Gaussian point to the other Gaussian point.
         """
         return math.sqrt((self.x - other.x) ** 2 + (self.y - other.y) ** 2)
     
     def ToMatrix(self):
-        """this function is used to return the gussian point as a matrix
-    
+        """Return the Gaussian point as a matrix.
+
         Returns:
-            list: the gussian point as a matrix
+            list: The Gaussian point as a matrix.
         """
         return [self.x, self.y , self.gradient]
     
     def ToMatrixWithCoordinates(self):
-        """this function is used to return the gussian point as a matrix with coordinates
+        """Return the Gaussian point as a matrix with coordinates.
 
         Returns:
-            list: the gussian point as a matrix with coordinates
+            list: The Gaussian point as a matrix with coordinates.
         """
         return [self.x, self.y, self.gradient]
     
     def ToNumPyArray(self):
-        """this function is used to return the gussian point as a numpy array
+        """Return the Gaussian point as a numpy array.
 
         Returns:
-            numpy array: the gussian point as a numpy array
+            numpy.ndarray: The Gaussian point as a numpy array.
         """
         return np.array([self.x, self.y, self.gradient])
     
     def ToNumPyArrayWithCoordinates(self):
-        """this function is used to return the gussian point as a numpy array with coordinates
+        """Return the Gaussian point as a numpy array with coordinates.
 
         Returns:
-            numpy array: the gussian point as a numpy array with coordinates
+            numpy.ndarray: The Gaussian point as a numpy array with coordinates.
         """
         return np.array([self.x, self.y, self.gradient])

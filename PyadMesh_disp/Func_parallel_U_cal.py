@@ -1,7 +1,12 @@
+# author: amirhossein khatami
+# mail: amirkhatami@gmail.com
+
+# importing libraries
 import numpy as np
 import numba as nb
 from numba import cuda, float64
 import math
+
 @cuda.jit('float64(float64,float64,float64,float64,float64,float64)',device=True)
 def U1_calculator_kernel(N1,N2,N3,U1_1,U1_2,U1_3):
     """this function is used to calculate the U1 of the point

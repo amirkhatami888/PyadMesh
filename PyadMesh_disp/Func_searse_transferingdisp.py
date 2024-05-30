@@ -1,6 +1,8 @@
+# author: amirhossein khatami
+# mail: amirkhatami@gmail.com
+
+# importing libraries
 import numpy as np
-
-
 
 def transfering(element,node):
     """this function is used to transfer the displacement from element to node

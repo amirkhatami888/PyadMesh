@@ -5,9 +5,11 @@ import cupy as cp
 
 def transfering(element, node):
     """this function is used to transfer the displacement from element to node
+    
     Args:
         element (Element): the element
         node (NodePoint): the node
+        
     Returns:
         float: the displacement of the node
     """
