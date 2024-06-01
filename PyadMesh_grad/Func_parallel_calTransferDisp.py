@@ -1,3 +1,6 @@
+# author: amirhossein khatami
+# mail: amirkhatami@gmail.com
+#importing libraries
 import Func_parallel_isInsideElement_disp as isInsideElement
 import Func_Parallel_N as N_cal
 import Func_parallel_U_cal as U_cal

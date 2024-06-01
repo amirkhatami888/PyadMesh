@@ -1,5 +1,6 @@
 # author: amirhossein khatami
 # mail: amirkhatami@gmail.com
+
 #importing libraries
 import numpy as np
 import math
@@ -59,6 +60,12 @@ def tranferPoint(csvFile,inpFile,X,Y):
 
 
 if __name__ == "__main__":
+    """
+    Main script execution for transferring point data.
+
+    This script reads the arguments from the command line, calls the `tranferPoint` function
+    to process the mesh data and transfer the displacement data for the specified point.
+    """
     time_start = time.time()
     csvFile=sys.argv[1]
     inpFile=sys.argv[2]

@@ -1,3 +1,5 @@
+# author: amirhossein khatami
+# mail: amirkhatami@gmail.com
 
 def rename(mesh):
     """this function rename id of nodes and elements"""

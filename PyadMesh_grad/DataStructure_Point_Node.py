@@ -130,10 +130,6 @@ class NodePoint:
         """
         return self.displacement
     
-
-    
-    
-    
     def ToMatrix(self):
         """this function is used to return the node as a matrix
         Returns:

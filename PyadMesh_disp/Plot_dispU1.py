@@ -1,12 +1,13 @@
-import matplotlib
+# author: amirhossein khatami
+# mail: amirkhatami@gmail.com
 
+#importing libraries
+import matplotlib
 from   matplotlib.figure import Figure
 import matplotlib.pyplot as plt
 import matplotlib.tri as mtri
 import numpy as np
 import os
-
-
 from plot_tecplot_pltWriter import write_plt_tecplot
 
 

@@ -5,41 +5,39 @@ import math
 import numpy as np
 class Triangle_order1:
     """
-    This class is used to create a triangle element of order 1
+    This class represents a first-order triangular finite element.
+
     Attributes:
-        id: id of the element
-        n1: node 1
-        n2: node 2
-        n3: node 3
-        A: area of the triangle
-        GaussianPoint_coordinate: coordinate of the Gaussian point
-        GaussianPoints: list of Gaussian points
+        id (int): Identifier for the element.
+        n1 (Node): First node of the triangle.
+        n2 (Node): Second node of the triangle.
+        n3 (Node): Third node of the triangle.
+        A (float): Area of the triangle.
+        GaussianPoint_coordinate (list): Coordinates of the Gaussian point.
+        GaussianPoints (list): List of Gaussian points.
+        elementSize (float): Size of the element.
+        srp_value (float): SRP value.
+        fem_value (float): FEM value.
+        nodes (list): List of nodes.
+        _GSH: Placeholder for Gaussian shape functions.
+        relative_error_thereshold (float): Relative error threshold.
     """
     def __init__(self,id,n1,n2,n3,relative_error_thereshold=0.001):
         """
         The constructor for Triangle_order1 class.
-        args:
-            id(int): id of the element
-            n1(Node): node 1
-            n2(Node): node 2
-            n3(Node): node 3          
-            A(float): area of the triangle
-            GaussianPoint_coordinate(list): coordinate of the Gaussian point
-            GaussianPoints(list): list of Gaussian points
-            elementSize(float): size of the element
-            srp_value(float): value of the srp
-            fem_value(float): value of the fem 
-        """
 
+        Args:
+            id (int): Identifier for the element.
+            n1 (Node): First node of the triangle.
+            n2 (Node): Second node of the triangle.
+            n3 (Node): Third node of the triangle.
+            relative_error_thereshold (float): Relative error threshold.
+        """
         self.id=id
-        
         self.n1 = n1
         self.n2 = n2
         self.n3 = n3
-        
         self.A = 0.5*abs((n2.Give_x()-n1.Give_x())*(n3.Give_y()-n1.Give_y())-(n3.Give_x()-n1.Give_x())*(n2.Give_y()-n1.Give_y()))
-        
-        
         self.GaussianPoint_coordinate = [(n1.Give_x()+n2.Give_x()+n3.Give_x())/3,((n1.Give_y()+n2.Give_y()+n3.Give_y()))/3]
         #calculate element size of triangle element
         dx1=n1.Give_x()-n2.Give_x()
@@ -49,25 +47,19 @@ class Triangle_order1:
         dx3=n2.Give_x()-n3.Give_x()
         dy3=n2.Give_y()-n3.Give_y()
         self.elementSize=math.sqrt((dx1**2+dy1**2+dx2**2+dy2**2+dx3**2+dy3**2)/3)
-    
-
         self.GaussianPoints = []
         self.srp_value = None
         self.fem_value = None
         self.nodes=[n1,n2,n3]
         self._GSH = None
-
         self.relative_error_thereshold=relative_error_thereshold
     
-
-         
     @property
     def Error_pure(self):
         """this property is used to return the absoulote error of the element
         """
         return abs(self.srp_value-self.fem_value)
-    
-    
+
     @property
     def Error(self):
         """this property is used to return the error of the element
@@ -123,11 +115,7 @@ class Triangle_order1:
         
         U=math.sqrt(U1**2+U2**2)
         return U
-    
 
-    
-        
-        
     def Give_GaussianPoint(self):
         """this function is used to return the Gaussian point of the element
         

@@ -1,5 +1,4 @@
 # author: amirhossein khatami
-
 # mail: amirkhatami@gmail.com
 # importing libraries
 import math

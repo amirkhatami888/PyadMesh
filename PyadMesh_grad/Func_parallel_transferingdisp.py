@@ -1,3 +1,6 @@
+# author: amirhossein khatami
+# mail: amirkhatami@gmail.com
+#importing libraries
 import numpy as np
 import cupy as cp
 

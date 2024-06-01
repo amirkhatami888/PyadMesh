@@ -1,3 +1,6 @@
+# author: amirhossein khatami
+# mail: amirkhatami@gmail.com
+# importing libraries
 import sys
 from PySide6.QtWidgets import QApplication, QWidget, QTabWidget, QPushButton, QVBoxLayout
 from PySide6 import QtGui
@@ -9,9 +12,16 @@ from GUI_Tab_plotError_fineMesh import Tab_plotError_fineMesh
 from GUI_Tab_Mesh_generatorRefiner import Tab_Mesh_generatorRefiner
 from PySide6.QtGui import QIcon, QScreen
 class mainFrameGUI(QWidget):
-    """this class is the main frame of the GUI
+    """
+    This class represents the main frame of the GUI.
+
+    Attributes:
+        No attributes.
     """
     def __init__(self):
+        """
+        Initializes the main frame of the GUI with tabs and buttons.
+        """
         super().__init__()
         self.setGeometry(15, 30, 950, 950)
         self.setWindowTitle("PyadptiMesh-grad")

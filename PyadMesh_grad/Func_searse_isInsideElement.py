@@ -3,10 +3,6 @@
 import numpy as np
 import math
 
-
-
-
-
 def checker(x_a,y_a,x_b,y_b,x_c,y_c,O_x,O_y):
     """this function check one point is inside of triangle or not?
     

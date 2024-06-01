@@ -7,7 +7,6 @@ import pandas as pd
 import warnings
 import sys
 import copy
-
 import re_iding
 from DataStructure_Element_Triangle_order1 import Triangle_order1 as Element
 from DataStructure_Point_Node              import NodePoint       as Node

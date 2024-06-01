@@ -1,3 +1,7 @@
+# author: amirhossein khatami
+# mail: amirkhatami@gmail.com
+
+#importing libraries
 import sys
 from PySide6.QtWidgets import QApplication, QWidget, QTabWidget, QPushButton, QVBoxLayout
 from PySide6 import QtGui
@@ -7,9 +11,16 @@ from gui.GUI_Tab_autoRegen import Tab_autoRegen
 from gui.GUI_Tab_plotError import Tab_plotError
 
 class mainFrameGUI(QWidget):
-    """this class is the main frame of the GUI
+    """
+    This class is the main frame of the Graphical User Interface (GUI).
+
+    The GUI is designed for the "Transfer Operator HighPerformance SRP" application, 
+    featuring multiple tabs to perform various tasks related to mesh transfer and visualization.
     """
     def __init__(self):
+        """
+        Initializes the main frame of the GUI, setting up the window properties and tabs.
+        """
         super().__init__()
         self.setGeometry(15, 30, 700, 500)
         self.setWindowTitle("Transfer Operator HighPerformance SRP")

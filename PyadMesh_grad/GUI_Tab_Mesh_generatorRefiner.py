@@ -1,3 +1,6 @@
+# author: amirhossein khatami
+# mail: amirkhatami@gmail.com
+#importing libraries
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QFileDialog,QLabel,QLineEdit,QComboBox,QMessageBox,QLCDNumber,QHBoxLayout,QRadioButton,QButtonGroup,QRadioButton
 from PySide6 import QtGui
 

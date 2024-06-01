@@ -3,13 +3,9 @@
 # importing libraries
 from DataStructure_Element_Triangle_order1 import Triangle_order1 as Element
 from DataStructure_Point_Node              import NodePoint       as Node
-
 from DataStructure_jar_Element             import JarOfElement
 from DataStructure_jar_Node                import JarOfNodes
-
 from DataStructure_Mesh                    import Mesh
-
-
 from Reader_abaqusCSV   import abaqusCSV
 from Reader_abaqusINP   import abaqusINP
 from Reader_GmeshDAT    import GmeshDAT

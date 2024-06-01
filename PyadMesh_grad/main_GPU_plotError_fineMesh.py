@@ -1,8 +1,6 @@
 # author: amirhossein khatami
 # mail: amirkhatami@gmail.com
 #importing libraries
-
-
 import sys
 from DataStructure_jar_Element             import JarOfElement
 from DataStructure_jar_Node                import JarOfNodes

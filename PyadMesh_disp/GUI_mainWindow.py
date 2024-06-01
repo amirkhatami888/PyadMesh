@@ -49,6 +49,6 @@ class mainFrameGUI(QWidget):
         self.setLayout(layout)
          
     def close_main_frame(self):
-        """ 
+        """
         """
         self.close()

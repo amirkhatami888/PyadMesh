@@ -1,3 +1,6 @@
+# author: amirhossein khatami
+# mail: amirkhatami@gmail.com
+#importing libraries
 import Func_parallel_isInsideElement as isInsideElement
 import Func_parallel_transferingdisp as transfering
 import func_nearestPoint as func_nearestPoint

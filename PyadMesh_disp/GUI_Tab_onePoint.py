@@ -13,69 +13,75 @@ def Tab_onePoint(first_layout):
     POINT_X=0
     POINT_Y=0
 
-    ##create layout for input csv file
+    #create layout for input csv file
     input_layout1 = QHBoxLayout()
     input_layout1.setSpacing(20)
     input_layout1.setContentsMargins(10, 10, 10, 10)
     first_layout.addLayout(input_layout1)
-    ### Create label csv
+    
+    #Create label csv
     label_browser_csv = QLabel("csv file path(result FEM):")
-    ### Create line edit
+    #Create line edit
     lineEdit_browser_csv = QLineEdit()
     lineEdit_browser_csv.textChanged.connect(lambda: write_text(lineEdit_browser_csv.text(), "CSV_FIILE"))
     ### Create button to browser csv file
     button_browser_csv = QPushButton("browser")
     button_browser_csv.setFixedHeight(30)
     button_browser_csv.setFixedWidth(100)
-
     button_browser_csv.clicked.connect(lambda:  browse_csv_file())
-    ### Add widget to layout
+    
+    #Add widget to layout
     input_layout1.addWidget(label_browser_csv)
     input_layout1.addWidget(lineEdit_browser_csv)
     input_layout1.addWidget(button_browser_csv)
     
-    ##create layout for input inp file
+    #create layout for input inp file
     input_layout2 = QHBoxLayout()
     input_layout2.setSpacing(20)
     input_layout2.setContentsMargins(10, 10, 10, 10)
     first_layout.addLayout(input_layout2)
-    ### Create label inp
+    
+    # Create label inp
     label_browser_inp = QLabel("inp file path(first mesh):")
-    ### Create line edit
+    
+    #Create line edit
     lineEdit_browser_inp = QLineEdit()
     lineEdit_browser_inp.textChanged.connect(lambda: write_text(lineEdit_browser_inp.text(), "INP_FILE"))
-    ### Create button to browser inp file
+    
+    #Create button to browser inp file
     button_browser_inp = QPushButton("browser")
     button_browser_inp.setFixedHeight(30)
     button_browser_inp.setFixedWidth(100)
-
     button_browser_inp.clicked.connect(lambda:  browse_inp_file())
-    ### Add widget to layout
+    
+    #Add widget to layout
     input_layout2.addWidget(label_browser_inp)
     input_layout2.addWidget(lineEdit_browser_inp)
     input_layout2.addWidget(button_browser_inp)
 
-    ##create layout for input point data
+    #create layout for input point data
     input_layout3 = QHBoxLayout()
     input_layout3.setSpacing(20)
     input_layout3.setContentsMargins(10, 10, 10, 10)
     first_layout.addLayout(input_layout3)
-    ### Create label point data x
+    
+    #Create label point data x
     label_point_data_x = QLabel("x:")
 
-    ### Create line edit
+    #Create line edit
     lineEdit_point_data_x = QLineEdit()
     lineEdit_point_data_x.setFixedWidth(100)
  
     lineEdit_point_data_x.textChanged.connect(lambda: write_text(lineEdit_point_data_x.text(), "POINT_X"))  
-    ### Create label point data y
+    #Create label point data y
     label_point_data_y = QLabel("y:")
 
-    ### Create line edit
+    #Create line edit
     lineEdit_point_data_y = QLineEdit()
     lineEdit_point_data_y.setFixedWidth(100)
     lineEdit_point_data_y.textChanged.connect(lambda: write_text(lineEdit_point_data_y.text(), "POINT_Y"))
-    ### Add widget to layout
+    
+    #Add widget to layout
     input_layout3.addWidget(label_point_data_x)
     input_layout3.addWidget(lineEdit_point_data_x)
     input_layout3.addWidget(label_point_data_y)
@@ -87,39 +93,33 @@ def Tab_onePoint(first_layout):
     input_layout4.setSpacing(20)
     input_layout4.setContentsMargins(10, 10, 10, 10)
     first_layout.addLayout(input_layout4)
-    ### Create label type of processor
+    
+    #Create label type of processor
     label_type_processor = QLabel("type of processor:")
 
-    ### Create radio button
+    #Create radio button
     radio_button1 = QRadioButton("CPU") 
     radio_button2 = QRadioButton("GPU")
-
     radio_button1.toggled.connect(lambda: write_text("CPU", "PROCOCESS"))
     radio_button2.toggled.connect(lambda: write_text("GPU", "PROCOCESS"))
-    ### Add widget to layout
+    
+    #Add widget to layout
     input_layout4.addWidget(label_type_processor)
     input_layout4.addWidget(radio_button1)
     input_layout4.addWidget(radio_button2)
     input_layout4.addStretch(1)
     
-   
-    ##add stretch
+    #add stretch
     first_layout.addStretch(1)
 
-    
-
-
-
-    ##create run button
+    #create run button
     run_button = QPushButton("Run")
     run_button.setFixedHeight(50)
     run_button.setFixedWidth(150)
-
-
     run_button.clicked.connect(lambda: run())
-
     first_layout.addWidget(run_button)
     def write_text(text,var):
+
         global CSV_FIILE,INP_FILE,PROCOCESS,POINT_X,POINT_Y
         if var=="CSV_FIILE":
             CSV_FIILE=text

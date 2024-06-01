@@ -1,3 +1,7 @@
+# author: amirhossein khatami
+# mail: amirkhatami@gmail.com
+
+#importing libraries
 import numpy as np
 import os
 from plot_tecplot_pltWriter import write_plt_tecplot

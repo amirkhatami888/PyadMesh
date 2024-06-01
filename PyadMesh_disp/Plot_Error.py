@@ -1,5 +1,8 @@
-import matplotlib
+# author: amirhossein khatami
+# mail: amirkhatami@gmail.com
 
+#importing libraries
+import matplotlib
 from   matplotlib.figure import Figure
 import matplotlib.pyplot as plt
 import matplotlib.tri as mtri

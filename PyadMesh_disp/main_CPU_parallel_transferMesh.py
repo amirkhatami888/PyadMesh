@@ -32,6 +32,22 @@ import Plot_dispU1
 import Plot_dispU2
 
 if __name__ == "__main__":
+    """
+    this file to transfer data for the whole mesh.
+
+    This script reads the arguments from the terminal or command line,
+    processes the meshes, and transfers the displacement data from
+    the first mesh to the second mesh. The results are then saved and
+    visualized.
+
+    Arguments (in order):
+    csvFile: str : Path to the CSV file containing first mesh data
+    inpFile: str : Path to the INP file containing first mesh structure
+    datFile: str : Path to the DAT file containing second mesh data
+    savePath: str : Directory to save the output files
+    core: int : Number of cores to use for multiprocessing
+    """
+    
     time_start = time.time()
     csvFile=sys.argv[1]
     inpFile=sys.argv[2]

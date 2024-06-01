@@ -2,8 +2,6 @@
 # mail: amirkhatami@gmail.com
 import numpy as np
 
-
-
 def checker(id_n1,id_n2,id_n3,id_tri_n1,id_tri_n2,id_tri_n3):
     """this function check if   a element have sharing vertex with a triangle
 

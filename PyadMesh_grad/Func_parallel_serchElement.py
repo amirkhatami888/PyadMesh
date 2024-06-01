@@ -1,3 +1,6 @@
+# author: amirhossein khatami
+# mail: amirkhatami@gmail.com
+#importing libraries
 import numpy as np
 from numba import cuda
 import numba as nb
@@ -76,8 +79,6 @@ def mul_kernel_check_PointIsInsideElementssearch_element(MeshElementsNumpyArray,
             idx=np.argwhere(ans[i] == 1).flatten()
             ids=MeshElementsNumpyArray[idx, 0].flatten()
             li_ans.append(list(ids))
-    
-
 
     return li_ans
 

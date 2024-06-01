@@ -79,6 +79,12 @@ def tranferMesh(csvFile,inpFile,datFile,savePath,thread_x,thread_y):
 
 
 if __name__ == "__main__":
+    """
+    Main script execution for transferring point data.
+
+    This script reads the arguments from the command line, calls the `tranferPoint` function
+    to process the mesh data and transfer the displacement data for the specified point.
+    """
     time_start = time.time()
     csvFile=sys.argv[1]
     inpFile=sys.argv[2]

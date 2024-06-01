@@ -1,5 +1,7 @@
+# author: amirhossein khatami
+# mail: amirkhatami@gmail.com
+#importing libraries
 import numpy as np 
-
 def write_plt_tecplot(path,fileName,X_li,Y_li,Value_li,index_li):
     """this function is used to write plt tecplot file
     Args:
