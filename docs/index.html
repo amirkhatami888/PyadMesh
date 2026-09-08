@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>PyAdMesh</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Avilon
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/avilon-bootstrap-landing-page-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div id="logo">
+        
+        <!-- Uncomment below if you prefer to use an image logo -->
+         <a href="index.html"><img src="pyadaptimesh.svg" height=75 alt="" class="logo_mine"></a>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Introduce </a></li>
+          <li><a class="nav-link scrollto" href="#about">Functionality</a></li>
+          <li><a class="nav-link scrollto" href="#features">Programming Language And Libraries</a></li>
+          <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
+
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+
+    <div class="hero-text" data-aos="zoom-out">
+      <h2>PyAdMesh
+      </h2>
+      <p>PyAdMesh optimizes adaptive finite element analysis using GPGPU .
+      </p>
+      <a href="#introduce" class="btn-get-started scrollto">Get Started</a>
+    </div>
+
+    <div class="product-screens">
+
+      <div class="product-screen-1" data-aos="fade-up" data-aos-delay="400">
+        <img src="assets/img/product-screen-1.png" alt="">
+      </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+
+
+
+
+ 
+
+   <!-- ======= introduce  Section ======= -->
+
+   <section id="introduce" class="section-bg">
+    <div class="container-fluid" data-aos="fade-up">
+      <div class="section-header">
+    <br>
+    <br>
+    <br>
+
+        <h3 class="section-title">Introduce</h3>
+        <span class="section-divider"></span>
+      </div>
+          <p>
+            In the realm of engineering and computational simulations, precision and efficiency are paramount. The Finite Element (FE) Method has long been a cornerstone of numerical analysis, enabling engineers to solve complex problems with finite approximations. However, the quest for greater accuracy and faster computations has led researchers to explore adaptive methodologies as a powerful tool for reducing errors in FE Analysis (FEA).
+Adaptive FEA holds the promise of minimizing discretization errors, but it's not without its challenges. A significant portion of computational resources in adaptive FEA is dedicated to data transfer operators, responsible for transitioning information from the old mesh to the new one. Researchers have introduced various strategies, such as point-wise interpolation, averaging, consistent transfer operators, and the Super-convergent Patch Recovery (SPR) method.
+Among these techniques, SPR stands out as an exceptionally efficient approach, known for its accuracy. However, this accuracy often comes at the cost of high computational demands. This article delves into the potential of harnessing parallel processing, both on central processing units (CPU) and graphics processing units (GPU), to expedite the data transfer process in adaptive FEA.
+The core of this discussion revolves around an algorithm implemented in Python, utilizing libraries like NumPy, CuPy, and Numba. The results of this study demonstrate that parallel execution of this algorithm significantly reduces the time required for data transfer, especially when dealing with large quantities of elements, leading to remarkable speed-up rates. In a particular scenario involving 2,626 elements, a speed-up rate of fourteen was achieved.
+This research contributes to the advancement of more efficient computational methodologies for FEA, offering engineers and researchers a powerful tool to improve accuracy and reduce computational time in their simulations. By leveraging parallel processing, this article presents a solution that tackles the challenges of data transfer in adaptive FEA, opening doors to more streamlined and rapid engineering computations.
+            </p>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End About Section -->
+
+
+
+
+
+
+
+
+    <!-- ======= Functionality Section ======= -->
+    <section id="about" class="section-bg">
+      <div class="container-fluid" data-aos="fade-up">
+        <div class="section-header">
+          <h3 class="section-title">Functionality</h3>
+          <span class="section-divider"></span>
+          <p class="section-description">
+            PyAdMesh is a versatile software tool designed to enhance 
+            the efficiency of adaptive finite element method (AFEM) by leveraging the power of General-Purpose Graphics Processing Units (GPGPU).
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 about-img" data-aos="fade-right" dat-aos-delay="100">
+            <img src="assets/img/about-img.jpg" alt="">
+          </div>
+
+          <div class="col-lg-6 content" data-aos="fade-left" dat-aos-delay="100">
+            <h2>This version of the software offers various features, including:</h2>
+
+            <ul>
+              <li><i class="bi bi-check-circle"></i> 	Calculating information at a point in the domain using both CPU and GPU..</li>
+              <li><i class="bi bi-check-circle"></i> 	Transferring displacement gradient information from one Mesh to another using serial computations on CPU, parallel computations on CPU, and parallel computations on GPU, and combining them.</li>
+              <li><i class="bi bi-check-circle"></i>  Calculating and plotting error estimate contours based on superconvergent Patch  recovery.</li>
+              <li><i class="bi bi-check-circle"></i>  The ability to automatically generate a mesh based on displacement gradient information and transfer information to that mesh for repeated error reduction..</li>
+            </ul>
+
+            <p>
+              These features enhance accuracy and efficiency in engineering design problems and assist in more complex scientific analyses.            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Featuress Section ======= -->
+    <section id="features">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+
+              <h3 class="section-title">Programming Language And Libraries Used</h3>
+
+
+
+          <div class="col-lg-8 col-md-7 ">
+          <P>
+            PyAdMesh is primarily developed using the Python programming language.
+            Python was chosen for its ease of use, extensive libraries, and support for numerical computing.
+            It offers a high-level programming environment that allows for rapid development and prototyping.
+          </P>
+            <div class="row">
+
+              <div class="col-lg-6 col-md-6 box" data-aos="fade-up">
+                <div class="icon"><i class="bi bi-building-add"></i></div>
+                <h4 class="title"><a href="">NumPy</a></h4>
+                <p class="description">NumPy is a fundamental library for scientific computing in Python.
+                   It provides support for large, multi-dimensional arrays and matrices, along with a vast collection of high-level mathematical functions to operate on these arrays.
+                   In PyAdMesh, NumPy plays a crucial role in handling and processing numerical data efficiently..</p>
+              </div>
+              <div class="col-lg-6 col-md-6 box" data-aos="fade-up">
+                <div class="icon"><i class="bi bi-gpu-card"></i></div>
+                <h4 class="title"><a href="">CuPy</a></h4>
+                <p class="description">CuPy is a library that provides GPU-accelerated computation for NumPy-compatible arrays.
+                   It enables PyAdMesh to harness the computational power of GPGPU for parallel processing tasks, significantly improving data transfer performance.</p>
+              </div>
+              <div class="col-lg-6 col-md-6 box" data-aos="fade-up" dat-aos-delay="100">
+                <div class="icon"><i class="bi bi-gpu-card"></i></div>
+                <h4 class="title"><a href="">Numba</a></h4>
+                <p class="description">Numba is a Just-In-Time (JIT) compiler for Python that translates Python functions into optimized machine code at runtime.
+                   It is employed in PyAdMesh to accelerate specific computations, particularly within GPU kernels, resulting in substantial speed enhancements.</p>
+              </div>
+              <div class="col-lg-6 col-md-6 box" data-aos="fade-up" data-aos-delay="100">
+                <div class="icon"><i class="bi bi-brightness-high"></i></div>
+                <h4 class="title"><a href="">Matplotlib</a></h4>
+                <p class="description"> Matplotlib is a widely-used library for creating static, animated, and interactive visualizations in Python. In PyAdMesh, Matplotlib is used to generate plots and graphs for visualizing counters and other relevant data.
+                  These visualizations aid in understanding the performance and results of data transfer operations, providing valuable insights for users.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End Featuress Section -->
+
+
+    <!-- ======= code Section ======= -->
+    <section id="call-to-action">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-start">
+            <h3 class="cta-title">codes & tutrials</h3>
+            <p class="cta-text"> 
+            The source code for PyAdMesh is available on GitHub at the following link:<br>
+            <a href="https://github.com/amirkhatami888/PyAdMesh" class="cta-btn">GitHub</a><br>
+            the tutrials for using PyAdMesh are available at the following link:<br>
+            <a href="https://PyAdMesh.ir/docs/" class="cta-btn">tutrials</a><br>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Call To Action Section -->
+
+    <!-- ======= More Features Section ======= -->
+
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery">
+      <div class="container-fluid" data-aos="fade-up">
+        <div class="section-header">
+          <h3 class="section-title">Gallery</h3>
+          <span class="section-divider"></span>
+       
+        </div>
+
+        <div class="row g-0">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="assets/img/gallery/gallery-1.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                <img src="assets/img/gallery/gallery-1.png" alt="">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="assets/img/gallery/gallery-2.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                <img src="assets/img/gallery/gallery-2.png" alt="">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="assets/img/gallery/gallery-3.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                <img src="assets/img/gallery/gallery-3.png" alt="">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="assets/img/gallery/gallery-4.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                <img src="assets/img/gallery/gallery-4.png" alt="">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="assets/img/gallery/gallery-5.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                <img src="assets/img/gallery/gallery-5.png" alt="">
+              </a>
+            </div>
+          </div>
+
+
+
+
+
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="assets/img/gallery/gallery-5.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                <img src="assets/img/gallery/mesh1.png" alt="">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="assets/img/gallery/gallery-5.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                <img src="assets/img/gallery/mesh2.png" alt="">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="assets/img/gallery/gallery-5.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                <img src="assets/img/gallery/mesh3.png" alt="">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="assets/img/gallery/gallery-5.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                <img src="assets/img/gallery/mesh4.png" alt="">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="assets/img/gallery/gallery-5.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                <img src="assets/img/gallery/mesh5.png" alt="">
+              </a>
+            </div>
+          </div>
+
+
+
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="assets/img/gallery/gallery-5.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                <img src="assets/img/gallery/mesh6.png" alt="">
+              </a>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </section><!-- End Gallery Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-4">
+            <div class="contact-about">
+              <h3>PyAdMesh</h3>
+              <p>If you have any inquiries or require further information regarding PyAdMesh, please feel free to contact us using the following contact details:</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="info">
+              <div>
+                <i class="bi bi-geo-alt"></i>
+                <p> Mirdamad Blvd, No. 470<br>Tehran Province, Tehran</p>
+              </div>
+
+              <div>
+                <i class="bi bi-envelope"></i>
+                <p>amirkhatami888@gmail.com</p>
+              </div>
+
+
+            </div>
+          </div>
+
+            </div>
+          </div>
+
+   
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 text-lg-start text-center">
+          <div class="copyright">
+            &copy; Copyright <strong>Avilon</strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Avilon
+          -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          </div>
+        </div>
+
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-chevron-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
